@@ -9,12 +9,8 @@ public class RGBTriangle {
     public static int g1;
     public static int b1;
 
-
     public static void createRGBTriangle ()
     {
-    //    DrawTool.display();
-    //    DrawTool.setXYRange(-0.1, 1.2, -0.1, 1.1);
-
         for (double x = 0; x < 1.155; x = x + 0.005) {
             for (double y = 0; y < 1; y = y + 0.005) {
                 if ((y < Math.sqrt(3) * x) && (y < -Math.sqrt(3) * (x - 1.155))) {
@@ -25,9 +21,7 @@ public class RGBTriangle {
                     g1 = (int) g;
                     b1 = (int) b;
                     String position = String.format("%.3f", x) + "," + String.format("%.3f", y);
-                    //System.out.println (position);
                     xyRGB.put(position, r/250 + "," + g/250 + "," + b/250);
-                 //   DrawTool.drawPointTriangle(x, y);
                 }
             }
 

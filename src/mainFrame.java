@@ -16,12 +16,6 @@ import java.io.InputStream;
 
 public class mainFrame extends Application{
 
-    public static void main (String[] argv)
-    {
-        RGBTriangle.createRGBTriangle();
-        launch(argv);
-    }
-
     Button btn = new Button();
     Button btn2 = new Button();
     TextField textFieldY = new TextField();
@@ -40,6 +34,11 @@ public class mainFrame extends Application{
     Button btnClose = new Button();
 
 
+    public static void main (String[] argv)
+    {
+        RGBTriangle.createRGBTriangle();
+        launch(argv);
+    }
 
     @Override
     public void start (Stage primaryStage)
@@ -90,19 +89,18 @@ public class mainFrame extends Application{
         col1.setPercentWidth(25);
         pane.getColumnConstraints().addAll(col1);
 
-        Class<?> clazz = this.getClass();
+        Class<?> clazz = this.getClass(); // Get the triangle image as a inputstream
         InputStream input = clazz.getResourceAsStream("triangle.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
 
-
-        imageView.setFitWidth(400);
+        imageView.setFitWidth(400); // Setting the images dimensions
         imageView.setFitHeight(400);
         GridPane setIm = new GridPane();
         setIm.add(imageView, 6,4);
         setIm.setAlignment(Pos.CENTER_RIGHT);
 
-        GridPane setText = new GridPane();
+        GridPane setText = new GridPane(); // Grids for button layouts
         GridPane setClose = new GridPane();
         GridPane setName = new GridPane();
 
@@ -116,7 +114,7 @@ public class mainFrame extends Application{
         setText.add(topNote, 3,3);
         setText.setAlignment(Pos.TOP_CENTER);
 
-        btnClose.setOnMouseClicked(e -> primaryStage.close());
+        btnClose.setOnMouseClicked(e -> primaryStage.close()); // Close functionality
         btnClose.setText("Exit");
         setClose.setHgap(50);
         setClose.setPadding(new Insets(10, 10, 10, 10));
@@ -144,12 +142,17 @@ public class mainFrame extends Application{
 
     public void buttonClick ()
     {
-        String xText = textFieldX.getText();
+        String xText = textFieldX.getText(); // Getting the text
         String yText = textFieldY.getText();
-
         String result = (RGBTriangle.getValueXY(xText + "," + yText)); // getting the result from the main code
-        int length = result.length(); // setting its length for later
 
+        if (result == null) {
+            textFieldsS1.setText("Invalid input");
+            textFieldsS2.setText("Invalid input");
+            textFieldsS3.setText("Invalid input");
+        }
+
+        int length = result.length(); // setting its length for later
         int i = 0;
         StringBuffer s1 = new StringBuffer(); // Using three while loops to seperate the commas and put into appropriate text
         while (result.charAt(i) != ',') { // need to make more efficient
