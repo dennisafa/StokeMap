@@ -1,5 +1,4 @@
 import javafx.application.*;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -7,21 +6,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
-import javafx.scene.control.*;
-
 import javafx.scene.image.*;
-import javafx.scene.image.ImageView.*;
-import sun.applet.Main;
-
-import java.awt.*;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+
 
 
 public class mainFrame extends Application{
@@ -54,9 +44,7 @@ public class mainFrame extends Application{
     @Override
     public void start (Stage primaryStage)
     {
-
-
-        BorderPane root = new BorderPane();
+        BorderPane root = new BorderPane(); // root pane, with grid pane insertions
         GridPane pane = new GridPane();
 
 
@@ -64,11 +52,8 @@ public class mainFrame extends Application{
         pane.setVgap(10);
         pane.setPadding(new Insets(10));
 
-
-
         btn.setText("Calculate Stokes Parameters");
         btn.setMinWidth(200);
-
 
         lblX.setText("X Axis:");
         lblY.setText("Y Axis:");
@@ -79,7 +64,7 @@ public class mainFrame extends Application{
         s2.setText("S2^2 = ");
         s3.setText("S3^2 = ");
 
-        pane.setAlignment(Pos.CENTER_LEFT);
+        pane.setAlignment(Pos.CENTER_RIGHT);
         pane.add(lblX, 0, 0); // Setting the positions of each according to row and column
         pane.add(lblY, 0, 1);
         pane.add(textFieldX, 1, 0);
@@ -100,7 +85,7 @@ public class mainFrame extends Application{
         pane.add(s3, 0, 5);
         pane.add(btn, 1, 6); // Adding the button
 
-
+        // Make columns neater
         ColumnConstraints col1 = new ColumnConstraints();
         col1.setPercentWidth(25);
         pane.getColumnConstraints().addAll(col1);
@@ -126,33 +111,29 @@ public class mainFrame extends Application{
         header.setText("Dennis Afanasev");
         setName.setAlignment(Pos.BOTTOM_RIGHT);
 
-        topNote.setText("StokeMap");
+        topNote.setText("StokesMap");
         topNote.setFont(Font.font("Courier", 40));
         setText.add(topNote, 3,3);
         setText.setAlignment(Pos.TOP_CENTER);
 
-        btnClose.setOnMouseClicked(e -> System.exit(1));
+        btnClose.setOnMouseClicked(e -> primaryStage.close());
         btnClose.setText("Exit");
         setClose.setHgap(50);
         setClose.setPadding(new Insets(10, 10, 10, 10));
         setClose.add(btnClose,0,0);
         setClose.add(header, 10, 0);
 
-
-
-
+        // Setting properties to the root pane
         root.setRight(pane);
         root.setLeft(setIm);
         root.setTop(setText);
         root.setBottom(setClose);
-       // root.setBottom(setName);
         root.backgroundProperty().setValue(Background.EMPTY);
 
 
-      //  BorderPane setAll = new BorderPane();
-
+        // Setting the scene and the stage
         Scene scene = new Scene(root, 700, 550);
-        primaryStage.setTitle("StokeMap");
+        primaryStage.setTitle("StokesMap");
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
         primaryStage.setMinWidth(700);
