@@ -1,7 +1,12 @@
+import javafx.scene.paint.Color;
+
 import java.util.HashMap;
 public class RGBTriangle {
 
     public static HashMap<String, String> xyRGB = new HashMap<String, String>();
+    public static HashMap<String, Integer> getRColor = new HashMap<>();
+    public static HashMap<String, Integer> getGColor = new HashMap<>();
+    public static HashMap<String, Integer> getBColor = new HashMap<>();
     public static double r;
     public static double g;
     public static double b;
@@ -22,14 +27,12 @@ public class RGBTriangle {
                     b1 = (int) b;
                     String position = String.format("%.3f", x) + "," + String.format("%.3f", y);
                     xyRGB.put(position, r/250 + "," + g/250 + "," + b/250);
+                    getRColor.put(position, r1);
+                    getGColor.put(position, g1);
+                    getBColor.put(position, b1);
                 }
             }
 
         }
-    }
-
-    public static String getValueXY (String x)
-    {
-        return xyRGB.get(x);
     }
 }

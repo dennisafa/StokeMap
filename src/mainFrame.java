@@ -13,8 +13,7 @@ import javafx.scene.image.*;
 import java.io.InputStream;
 
 
-
-public class mainFrame extends Application{
+public class mainFrame extends Application {
 
     Button btn = new Button();
     Button btn2 = new Button();
@@ -23,6 +22,9 @@ public class mainFrame extends Application{
     TextField textFieldsS1 = new TextField();
     TextField textFieldsS2 = new TextField();
     TextField textFieldsS3 = new TextField();
+    TextField valR = new TextField();
+    TextField valG = new TextField();
+    TextField valB = new TextField();
     Label lblX = new Label();
     Label lblY = new Label();
     Label s1 = new Label();
@@ -31,6 +33,9 @@ public class mainFrame extends Application{
     Label caution = new Label();
     Label header = new Label();
     Label topNote = new Label();
+    Label r = new Label();
+    Label g = new Label();
+    Label b = new Label();
     Button btnClose = new Button();
 
 
@@ -62,6 +67,9 @@ public class mainFrame extends Application{
         s1.setText("S1^2 = ");
         s2.setText("S2^2 = ");
         s3.setText("S3^2 = ");
+        r.setText("Value of R = ");
+        g.setText("Value of G = ");
+        b.setText("Value of B = ");
 
         pane.setAlignment(Pos.CENTER_RIGHT);
         pane.add(lblX, 0, 0); // Setting the positions of each according to row and column
@@ -72,6 +80,12 @@ public class mainFrame extends Application{
         pane.add(textFieldsS2, 1, 4);
         pane.add(textFieldsS3, 1, 5);
         pane.add(caution, 1, 8);
+        pane.add(valR, 1, 9);
+        pane.add(r, 0, 9);
+        pane.add(g, 0, 10);
+        pane.add(b, 0, 11);
+        pane.add(valG, 1, 10);
+        pane.add(valB, 1, 11);
 
         btn.setOnMouseClicked(event -> buttonClick());
 
@@ -86,7 +100,7 @@ public class mainFrame extends Application{
 
         // Make columns neater
         ColumnConstraints col1 = new ColumnConstraints();
-        col1.setPercentWidth(25);
+        col1.setPercentWidth(29);
         pane.getColumnConstraints().addAll(col1);
 
         Class<?> clazz = this.getClass(); // Get the triangle image as a inputstream
@@ -130,11 +144,11 @@ public class mainFrame extends Application{
 
 
         // Setting the scene and the stage
-        Scene scene = new Scene(root, 700, 550);
+        Scene scene = new Scene(root, 750, 550);
         primaryStage.setTitle("StokesMap");
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
-        primaryStage.setMinWidth(700);
+        primaryStage.setMinWidth(750);
         primaryStage.setMinHeight(550);
         primaryStage.show();
 
@@ -144,13 +158,23 @@ public class mainFrame extends Application{
     {
         String xText = textFieldX.getText(); // Getting the text
         String yText = textFieldY.getText();
-        String result = (RGBTriangle.getValueXY(xText + "," + yText)); // getting the result from the main code
+        String result = (RGBTriangle.xyRGB.get(xText + "," + yText)); // getting the result from the main code
+        int currentR = RGBTriangle.getRColor.get(xText + "," + yText);
+        int currentG = RGBTriangle.getGColor.get(xText + "," + yText);
+        int currentB = RGBTriangle.getBColor.get(xText + "," + yText);
 
         if (result == null) {
             textFieldsS1.setText("Invalid input");
             textFieldsS2.setText("Invalid input");
             textFieldsS3.setText("Invalid input");
+            valR.setText("Invalid input");
+            valB.setText("Invalid input");
+            valG.setText("Invalid input");
         }
+
+        valR.setText(String.valueOf(currentR));
+        valG.setText(String.valueOf(currentG));
+        valB.setText(String.valueOf(currentB));
 
         int length = result.length(); // setting its length for later
         int i = 0;
