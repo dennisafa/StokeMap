@@ -16,7 +16,7 @@ import java.io.InputStream;
 public class mainFrame extends Application {
 
     Button btn = new Button();
-    Button btn2 = new Button();
+    Button btnClose = new Button();
     TextField textFieldY = new TextField();
     TextField textFieldX = new TextField();
     TextField textFieldsS1 = new TextField();
@@ -25,6 +25,7 @@ public class mainFrame extends Application {
     TextField valR = new TextField();
     TextField valG = new TextField();
     TextField valB = new TextField();
+    TextField colorName = new TextField();
     Label lblX = new Label();
     Label lblY = new Label();
     Label s1 = new Label();
@@ -36,7 +37,8 @@ public class mainFrame extends Application {
     Label r = new Label();
     Label g = new Label();
     Label b = new Label();
-    Button btnClose = new Button();
+    Label nameC = new Label();
+
 
 
     public static void main (String[] argv)
@@ -70,6 +72,7 @@ public class mainFrame extends Application {
         r.setText("Value of R = ");
         g.setText("Value of G = ");
         b.setText("Value of B = ");
+        nameC.setText("Color = ");
 
         pane.setAlignment(Pos.CENTER_RIGHT);
         pane.add(lblX, 0, 0); // Setting the positions of each according to row and column
@@ -86,8 +89,10 @@ public class mainFrame extends Application {
         pane.add(b, 0, 11);
         pane.add(valG, 1, 10);
         pane.add(valB, 1, 11);
+        pane.add(colorName, 1, 12);
+        pane.add(nameC, 0, 12);
 
-        btn.setOnMouseClicked(event -> buttonClick());
+        btn.setOnMouseClicked(event -> calculateValues());
 
         textFieldsS1.setEditable(false); // Don't want the results edited
         textFieldsS2.setEditable(false);
@@ -120,8 +125,8 @@ public class mainFrame extends Application {
 
         header.setFont(Font.font("Bold"));
         header.setFont(Font.font(15));
-        header.setText("Dennis Afanasev");
-        setName.setAlignment(Pos.BOTTOM_RIGHT);
+        header.setText("by Dennis Afanasev");
+        //setName.setAlignment(Pos.BOTTOM_RIGHT);
 
         topNote.setText("StokesMap");
         topNote.setFont(Font.font("Courier", 40));
@@ -150,11 +155,13 @@ public class mainFrame extends Application {
         primaryStage.setResizable(true);
         primaryStage.setMinWidth(750);
         primaryStage.setMinHeight(550);
+        primaryStage.setMaxHeight(850);
+        primaryStage.setMaxWidth(650);
         primaryStage.show();
 
     }
 
-    public void buttonClick ()
+    public void calculateValues ()
     {
         String xText = textFieldX.getText(); // Getting the text
         String yText = textFieldY.getText();
@@ -175,6 +182,8 @@ public class mainFrame extends Application {
         valR.setText(String.valueOf(currentR));
         valG.setText(String.valueOf(currentG));
         valB.setText(String.valueOf(currentB));
+
+        colorName.setText(setColor(currentR, currentG, currentB));
 
         int length = result.length(); // setting its length for later
         int i = 0;
@@ -200,5 +209,18 @@ public class mainFrame extends Application {
         }
         textFieldsS3.setText(s3.toString());
 
+    }
+
+    public String setColor (int r, int g, int b)
+    {
+        if ((r > g) && (r > b)) {
+            return "Red";
+        }
+        else if ((g > r) && (g > b)) {
+            return "Green";
+        }
+        else {
+            return "Blue";
+        }
     }
 }
