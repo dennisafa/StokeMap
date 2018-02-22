@@ -79,7 +79,7 @@ public class mainFrame extends Application {
         pane.add(lblY, 0, 1);
         pane.add(textFieldX, 1, 0);
         pane.add(textFieldY, 1, 1);
-        pane.add(textFieldsS1, 1, 3);
+        pane.add(textFieldsS1, 1, 3); 
         pane.add(textFieldsS2, 1, 4);
         pane.add(textFieldsS3, 1, 5);
         pane.add(caution, 1, 8);
