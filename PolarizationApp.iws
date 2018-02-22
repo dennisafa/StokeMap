@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="234c4a6f-e516-403c-abdc-b4fb4676b7fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/mainFrame.java" afterPath="$PROJECT_DIR$/src/mainFrame.java" />
-    </list>
+    <list default="true" id="234c4a6f-e516-403c-abdc-b4fb4676b7fc" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -320,12 +318,12 @@
       <updated>1519184714034</updated>
       <workItem from="1519184717155" duration="24215000" />
       <workItem from="1519229979594" duration="1004000" />
-      <workItem from="1519231079962" duration="8426000" />
+      <workItem from="1519231079962" duration="8473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33645000" />
+    <option name="totallyTimeSpent" value="33692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1267" height="734" extended-state="0" />
