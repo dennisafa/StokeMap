@@ -36,7 +36,7 @@ public class RGBTriangle {
 
         }
     }
-/*
+
     public static void diffTriangle ()
     {
         DrawTool.display();
@@ -59,5 +59,5 @@ public class RGBTriangle {
         }
 
     }
-    */
+
 }

@@ -79,7 +79,7 @@ public class mainFrame extends Application {
         pane.add(lblY, 0, 1);
         pane.add(textFieldX, 1, 0);
         pane.add(textFieldY, 1, 1);
-        pane.add(textFieldsS1, 1, 3); 
+        pane.add(textFieldsS1, 1, 3);
         pane.add(textFieldsS2, 1, 4);
         pane.add(textFieldsS3, 1, 5);
         pane.add(caution, 1, 8);
@@ -97,6 +97,10 @@ public class mainFrame extends Application {
         textFieldsS1.setEditable(false); // Don't want the results edited
         textFieldsS2.setEditable(false);
         textFieldsS3.setEditable(false);
+        valR.setEditable(false);
+        valB.setEditable(false);
+        valG.setEditable(false);
+        colorName.setEditable(false);
 
         pane.add(s1, 0, 3); // Adding the labels
         pane.add(s2, 0, 4);
