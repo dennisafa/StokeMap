@@ -53,7 +53,6 @@ public class mainFrame extends Application {
         BorderPane root = new BorderPane(); // root pane, with grid pane insertions
         GridPane pane = new GridPane();
 
-
         pane.setHgap(10); // Spacings and the sort
         pane.setVgap(10);
         pane.setPadding(new Insets(10));
@@ -125,7 +124,6 @@ public class mainFrame extends Application {
 
         GridPane setText = new GridPane(); // Grids for button layouts
         GridPane setClose = new GridPane();
-        GridPane setName = new GridPane();
 
         header.setFont(Font.font("Bold"));
         header.setFont(Font.font(15));
@@ -169,10 +167,7 @@ public class mainFrame extends Application {
     {
         String xText = textFieldX.getText(); // Getting the text
         String yText = textFieldY.getText();
-        String result = (RGBTriangle.xyRGB.get(xText + "," + yText)); // getting the result from the main code
-        int currentR = RGBTriangle.getRColor.get(xText + "," + yText);
-        int currentG = RGBTriangle.getGColor.get(xText + "," + yText);
-        int currentB = RGBTriangle.getBColor.get(xText + "," + yText);
+        String result = (RGBTriangle.xyRGB.get(xText + "," + yText)); // getting the stokes parameter results from the main code
 
         if (result == null) {
             textFieldsS1.setText("Invalid input");
@@ -181,7 +176,11 @@ public class mainFrame extends Application {
             valR.setText("Invalid input");
             valB.setText("Invalid input");
             valG.setText("Invalid input");
+            colorName.setText("Invalid input");
         }
+        int currentR = RGBTriangle.getRColor.get(xText + "," + yText);
+        int currentG = RGBTriangle.getGColor.get(xText + "," + yText);
+        int currentB = RGBTriangle.getBColor.get(xText + "," + yText);
 
         valR.setText(String.valueOf(currentR));
         valG.setText(String.valueOf(currentG));

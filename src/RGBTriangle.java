@@ -14,7 +14,6 @@ public class RGBTriangle {
     public static int g1;
     public static int b1;
 
-
     public static void createRGBTriangle ()
     {
         for (double x = 0; x < 1.155; x = x + 0.005) {
@@ -37,15 +36,15 @@ public class RGBTriangle {
         }
     }
 
-    public static void diffTriangle ()
+    public static void diffTriangle (double maxX, double maxY)
     {
         DrawTool.display();
-        DrawTool.setXYRange(-0.1, 1.2, -0.1, 1.1);
+        DrawTool.setXYRange(-0.1, maxX, -0.1, maxY);
 
 
-        for (double x = 0; x < 0.5; x = x + 0.005) {
-            for (double y = 0; y < 0.5; y = y + 0.005) {
-                if ((y < Math.sqrt(3) * x) && (y < -Math.sqrt(3) * (x - 0.5))) {
+        for (double x = 0; x < maxX; x = x + 0.005) {
+            for (double y = 0; y < maxY; y = y + 0.005) {
+                if ((y < Math.sqrt(3) * x) && (y < -Math.sqrt(3) * (x - maxX))) {
                     r = (1.732 * x - y) * 250 / 2;
                     g = (-1.732 * x - y + 2) * 250 / 2;
                     b = y * 250;
