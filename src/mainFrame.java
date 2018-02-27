@@ -1,4 +1,6 @@
 import javafx.application.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -10,13 +12,18 @@ import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
-import java.io.InputStream;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+// Two cor, and 3 stokes parameters. Generate color map
 
 public class mainFrame extends Application {
 
     Button btn = new Button();
     Button btnClose = new Button();
+    Button openStoke = new Button();
     TextField textFieldY = new TextField();
     TextField textFieldX = new TextField();
     TextField textFieldsS1 = new TextField();
@@ -39,11 +46,15 @@ public class mainFrame extends Application {
     Label b = new Label();
     Label nameC = new Label();
 
+    public static HashMap<String, Double> stokesHash1 = new HashMap<String, Double>();
+    public static HashMap<String, Double> stokesHash2 = new HashMap<>();
+    public static HashMap<String, Double> stokesHash3 = new HashMap<>();
+
 
 
     public static void main (String[] argv)
     {
-        RGBTriangle.createRGBTriangle();
+        //formatStokes();
         launch(argv);
     }
 
@@ -52,6 +63,7 @@ public class mainFrame extends Application {
     {
         BorderPane root = new BorderPane(); // root pane, with grid pane insertions
         GridPane pane = new GridPane();
+        ClickHandler ch = new ClickHandler();
 
         pane.setHgap(10); // Spacings and the sort
         pane.setVgap(10);
@@ -59,6 +71,9 @@ public class mainFrame extends Application {
 
         btn.setText("Calculate Stokes Parameters");
         btn.setMinWidth(200);
+        btn.setDisable(true);
+        openStoke.setOnAction(ch);
+        openStoke.setPrefWidth(230);
 
         lblX.setText("X Axis:");
         lblY.setText("Y Axis:");
@@ -72,27 +87,40 @@ public class mainFrame extends Application {
         g.setText("Value of G = ");
         b.setText("Value of B = ");
         nameC.setText("Color = ");
+        openStoke.setText("Generate Color Map");
 
         pane.setAlignment(Pos.CENTER_RIGHT);
-        pane.add(lblX, 0, 0); // Setting the positions of each according to row and column
-        pane.add(lblY, 0, 1);
-        pane.add(textFieldX, 1, 0);
-        pane.add(textFieldY, 1, 1);
+        pane.add(lblX, 0, 1); // Setting the positions of each according to row and column
+        pane.add(lblY, 0, 2);
+        pane.add(textFieldX, 1, 1);
+        pane.add(textFieldY, 1, 2);
         pane.add(textFieldsS1, 1, 3);
         pane.add(textFieldsS2, 1, 4);
         pane.add(textFieldsS3, 1, 5);
         pane.add(caution, 1, 8);
-        pane.add(valR, 1, 9);
-        pane.add(r, 0, 9);
-        pane.add(g, 0, 10);
-        pane.add(b, 0, 11);
-        pane.add(valG, 1, 10);
-        pane.add(valB, 1, 11);
-        pane.add(colorName, 1, 12);
-        pane.add(nameC, 0, 12);
+        pane.add(openStoke, 1, 0);
+    //    pane.add (calcStoke, 1, 10);
+        pane.add(valR, 1, 11);
+        pane.add(r, 0, 11);
+        pane.add(g, 0, 12);
+        pane.add(b, 0, 13);
+        pane.add(valG, 1, 12);
+        pane.add(valB, 1, 13);
+        pane.add(colorName, 1, 15);
+        pane.add(nameC, 0, 15);
+
+
+        openStoke.setOnMouseClicked(event -> {
+            FileChooser chooseStoke = new FileChooser();
+          //  chooseStoke.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*txt"));
+            File stokeVals = chooseStoke.showOpenDialog(new Stage());
+            calcWithStokes(stokeVals);
+        });
 
         btn.setOnMouseClicked(event -> calculateValues());
 
+        textFieldX.setEditable(false);
+        textFieldY.setEditable(false);
         textFieldsS1.setEditable(false); // Don't want the results edited
         textFieldsS2.setEditable(false);
         textFieldsS3.setEditable(false);
@@ -135,7 +163,11 @@ public class mainFrame extends Application {
         setText.add(topNote, 3,3);
         setText.setAlignment(Pos.TOP_CENTER);
 
-        btnClose.setOnMouseClicked(e -> primaryStage.close()); // Close functionality
+        btnClose.setOnMouseClicked(event -> {
+            primaryStage.close();
+            System.exit(0);
+            // Close functionality
+        });
         btnClose.setText("Exit");
         setClose.setHgap(50);
         setClose.setPadding(new Insets(10, 10, 10, 10));
@@ -162,11 +194,22 @@ public class mainFrame extends Application {
         primaryStage.show();
 
     }
+    private class ClickHandler implements EventHandler<ActionEvent> {
+        @Override
+        public void handle (ActionEvent e){
+            if (e.getSource() == openStoke) {
+                textFieldX.setEditable(true);
+                textFieldY.setEditable(true);
+                btn.setDisable(false);
+            }
+        }
+    }
 
     public void calculateValues ()
     {
         String xText = textFieldX.getText(); // Getting the text
         String yText = textFieldY.getText();
+        String inputCor = textFieldX.getText() + "," + textFieldY.getText();
         String result = (RGBTriangle.xyRGB.get(xText + "," + yText)); // getting the stokes parameter results from the main code
 
         if (result == null) {
@@ -182,36 +225,14 @@ public class mainFrame extends Application {
         int currentG = RGBTriangle.getGColor.get(xText + "," + yText);
         int currentB = RGBTriangle.getBColor.get(xText + "," + yText);
 
-        valR.setText(String.valueOf(currentR));
-        valG.setText(String.valueOf(currentG));
-        valB.setText(String.valueOf(currentB));
+        valR.setText(RGBTriangle.getRColor.get(inputCor).toString());
+        valG.setText(RGBTriangle.getGColor.get(inputCor).toString());
+        valB.setText(RGBTriangle.getBColor.get(inputCor).toString());
 
         colorName.setText(setColor(currentR, currentG, currentB));
-
-        int length = result.length(); // setting its length for later
-        int i = 0;
-        StringBuffer s1 = new StringBuffer(); // Using three while loops to seperate the commas and put into appropriate text
-        while (result.charAt(i) != ',') { // need to make more efficient
-               s1.append(result.charAt(i));
-               i++;
-        }
-        textFieldsS1.setText(s1.toString());
-
-        StringBuffer s2 = new StringBuffer();
-        while (result.charAt(i + 1) != ',') {
-            s2.append(result.charAt(i + 1));
-            i++;
-        }
-        textFieldsS2.setText(s2.toString());
-
-
-        StringBuffer s3 = new StringBuffer();
-        while (i + 2 < length) {
-            s3.append(result.charAt(i + 2));
-            i++;
-        }
-        textFieldsS3.setText(s3.toString());
-
+        textFieldsS1.setText(stokesHash1.get(xText + "," + yText).toString());
+        textFieldsS2.setText(stokesHash2.get(xText + "," + yText).toString());
+        textFieldsS3.setText(stokesHash3.get(xText + "," + yText).toString());
     }
 
     public String setColor (int r, int g, int b)
@@ -224,6 +245,108 @@ public class mainFrame extends Application {
         }
         else {
             return "Blue";
+        }
+    }
+    /*
+    public void formatStokes (File stokesParam)
+    {
+        try {
+            Scanner readFile = new Scanner(stokesParam);
+            PrintWriter writer = new PrintWriter("src/stokes.txt", "UTF-8");
+            int i = 0;
+            while (readFile.hasNextLine()) {
+                while (readFile.hasNextDouble()) {
+                    writer.println(String.format("%.5f", readFile.nextDouble()));
+                    i++;
+                    if (i == 5) {
+                        writer.println();
+                        i = 0;
+                    }
+                }
+            }
+            writer.close();
+        } catch (Exception e) {
+            System.out.println ("Error: formatStokes did not recognize the file");
+        }
+    }
+    */
+
+    public void calcWithStokes(File checkStoke)
+    {
+        try {
+        //    File checkStoke = new File ("src/StokesMap.txt");
+        //    checkStoke.deleteOnExit();
+            Scanner readStoke = new Scanner(checkStoke); // reading the formatted file
+            int counter;
+            double maxX = Double.NEGATIVE_INFINITY; // Compare for the max values to pass into the image creator
+            double minX = Double.POSITIVE_INFINITY;
+            double maxY = Double.NEGATIVE_INFINITY;
+            double minY = Double.POSITIVE_INFINITY;
+            double stokes1 = 0;
+            double stokes2 = 0;
+            double stokes3 = 0;
+            double difference = 0;
+            double[] addandsub = new double[2];
+            int countAddorSub = 0;
+            while (readStoke.hasNextDouble()) {
+                counter = 0;
+                StringBuffer hashCodeXY = new StringBuffer(); // Appending the xy values to the hash map
+                StringBuffer hashStoke1 = new StringBuffer();
+                StringBuffer hashStoke2 = new StringBuffer();
+                StringBuffer hashStoke3 = new StringBuffer();
+                while (counter < 2) { // Build the string for the two xy values
+                    if (counter < 1) {
+                        double x = (double) Math.round(readStoke.nextDouble() * 100) / 100;
+                       // Check for the maxX and minX to pass into the RGB creator
+                        if (x > maxX) {
+                            maxX = x;
+                        }
+                        if (x < minX) {
+                            minX = x;
+                        }
+                        hashCodeXY.append(x + ",");
+                    }
+                    else {
+                        double y = (double) Math.round(readStoke.nextDouble() * 100) / 100;
+                        if (y > maxY) {
+                            maxY = y;
+                        }
+                        if (y < minY) {
+                            minY = y;
+                        }
+                        hashCodeXY.append(y);
+
+                        if (countAddorSub < 2) {
+                            addandsub[countAddorSub] = y;
+                        }
+                        countAddorSub++;
+                    }
+                    counter++;
+                    if (counter == 2) { // Move on to the stokes
+                        while (counter < 5) {
+                            if (counter == 2) {
+                                stokes1 = readStoke.nextDouble();
+                                hashStoke1.append(stokes1);
+                            } else if (counter == 3) {
+                                stokes2 = readStoke.nextDouble();
+                                hashStoke2.append(stokes2);
+                            } else {
+                                stokes3 = readStoke.nextDouble();
+                                hashStoke3.append(stokes3);
+                            }
+                            counter++;
+                        }
+                    }
+                }
+                stokesHash1.put(hashCodeXY.toString(), stokes1);
+                stokesHash2.put(hashCodeXY.toString(), stokes2);
+                stokesHash3.put(hashCodeXY.toString(), stokes3);
+            }
+            difference = addandsub[1] - addandsub[0];
+            System.out.println (difference);
+            RGBTriangle.diffTriangle(minX, maxX, minY, maxY, (double) Math.round(difference * 100) / 100);
+        } catch (Exception e) {
+            System.out.println ("File not found");
         }
     }
 }

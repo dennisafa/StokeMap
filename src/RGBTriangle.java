@@ -1,5 +1,4 @@
-import javafx.scene.paint.Color;
-
+import java.math.BigDecimal;
 import java.util.HashMap;
 public class RGBTriangle {
 
@@ -7,13 +6,16 @@ public class RGBTriangle {
     public static HashMap<String, Integer> getRColor = new HashMap<>();
     public static HashMap<String, Integer> getGColor = new HashMap<>();
     public static HashMap<String, Integer> getBColor = new HashMap<>();
+    public static HashMap<String, String> getStokes = new HashMap<>();
+    public static HashMap<String, String> getStokesRGB = new HashMap<>();
     public static double r;
     public static double g;
     public static double b;
     public static int r1;
     public static int g1;
     public static int b1;
-
+    public static DrawTool generateMap = new DrawTool();
+/*
     public static void createRGBTriangle ()
     {
         for (double x = 0; x < 1.155; x = x + 0.005) {
@@ -25,38 +27,47 @@ public class RGBTriangle {
                     r1 = (int) r;
                     g1 = (int) g;
                     b1 = (int) b;
-                    String position = String.format("%.3f", x) + "," + String.format("%.3f", y);
-                    xyRGB.put(position, r/250 + "," + g/250 + "," + b/250);
-                    getRColor.put(position, r1);
-                    getGColor.put(position, g1);
-                    getBColor.put(position, b1);
                 }
             }
 
         }
     }
+    */
 
-    public static void diffTriangle (double maxX, double maxY)
+    public static void diffTriangle (double xStart, double xEnd, double yStart, double yEnd, double diff)
     {
-        DrawTool.display();
-        DrawTool.setXYRange(-0.1, maxX, -0.1, maxY);
+        generateMap.removeAll();
+        generateMap.display();
+        generateMap.setXYRange(xStart, xEnd, yStart, yEnd);
+        //find ranges, xmax and xmin, ymax and ymin.
 
 
-        for (double x = 0; x < maxX; x = x + 0.005) {
-            for (double y = 0; y < maxY; y = y + 0.005) {
-                if ((y < Math.sqrt(3) * x) && (y < -Math.sqrt(3) * (x - maxX))) {
-                    r = (1.732 * x - y) * 250 / 2;
-                    g = (-1.732 * x - y + 2) * 250 / 2;
-                    b = y * 250;
+        for (double x = xStart; x < xEnd; x = x + diff) { // Xmax is the max x from file input
+            for (double y = yStart; y < yEnd; y = y + diff) { // ymax is the max y from file input
+                    double fixedY = Math.floor(y * 100 + 0.5) / 100;
+                    double fixedX = Math.floor(x * 100 + 0.5) / 100;
+                    String XandY = fixedX + "," + fixedY;
+                    r = mainFrame.stokesHash1.get(XandY) * 250; // r is S1
+                    g = mainFrame.stokesHash2.get(XandY) * 250;
+                    b = mainFrame.stokesHash3.get(XandY) * 250;
                     r1 = (int) r;
                     g1 = (int) g;
                     b1 = (int) b;
-                    DrawTool.drawPointTriangle(x, y);
+                    String stokesValue = String.format("%.3f", r/250) + "," + String.format("%.3f", g/250) + "," + String.format("%.3f", b/250);
+                    xyRGB.put(XandY, r/250 + "," + g/250 + "," + b/250);
+                // System.out.println (stokesValue);
+                    getStokesRGB.put(stokesValue, r1 + "," + g1 + "," + b1);
+                    getStokes.put(stokesValue, XandY);
+                    getRColor.put(XandY, r1);
+                    getGColor.put(XandY, g1);
+                    getBColor.put(XandY, b1);
+                    generateMap.drawPointTriangle(x, y);
                 }
             }
+            generateMap.removeAll();
 
         }
 
     }
 
-}
+

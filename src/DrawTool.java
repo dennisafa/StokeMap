@@ -21,7 +21,7 @@ class DrawObject {
                            // and top-left of ovals/rectangles.
     double x2,y2;          // For the other end of lines, arrows.
     double width,height;   // For ovals/rectangles.
-    int diameter = 6;      // For points.
+    int diameter = 11;      // For points.
     Color color;           // Desired color.
     boolean isArrow = false;
     String str;            // For labels.
@@ -70,7 +70,7 @@ public class DrawTool extends JPanel {
 
     static double minX=-3, maxX=3, minY=-3, maxY=3;      // Bounds.
     static int numIntervals = 3;                        // # tick marks.
-    static int pointDiameter = 5;                        // Size of dot.
+    static int pointDiameter = 7;                        // Size of dot.
 
     // To prettify text:
     static DecimalFormat df = new DecimalFormat();
@@ -167,7 +167,7 @@ public class DrawTool extends JPanel {
 	DrawObject p = new DrawObject ();
 	p.color = new Color(RGBTriangle.r1, RGBTriangle.g1, RGBTriangle.b1);
 	p.x = x;  p.y = y;
-	p.diameter = pointDiameter;
+	p.diameter = 13;
 	p.sequenceNum = currentSequenceNum;
 	if (animationMode) {
 	    synchronized(animPoints) { animPoints.add (p); }
@@ -356,7 +356,7 @@ public class DrawTool extends JPanel {
     {
 	DrawObject L = new DrawObject ();
 	L.color = labelColor;
-	L.x = x;  L.y = y;  
+	L.x = x;  L.y = y;
 	L.str = str;
 	L.font = font;
 	L.sequenceNum = currentSequenceNum;
@@ -612,16 +612,8 @@ public class DrawTool extends JPanel {
     static void buildGUI ()
     {
 	// Need this size to balance axes.
-        frame.setSize (520, 690); 
-	frame.setTitle ("DrawTool");
-        frame.addWindowListener (
-            new WindowAdapter () {
-                public void windowClosing (WindowEvent e) 
-                {
-                    System.exit(0);
-                }
-            }
-        );
+        frame.setSize (520, 690);
+	frame.setTitle ("Generated Color Map");
 
 	Container cPane = frame.getContentPane ();
 
@@ -637,20 +629,6 @@ public class DrawTool extends JPanel {
 	panel.setLayout (new GridLayout (2,1));
 	panel.add (outputLabel);
 	JPanel bottomPanel = new JPanel ();
-	bottomPanel.setBackground (inputPanelColor);
-	bottomPanel.add (inputField);
-	bottomPanel.add (new JLabel ("   "));
-	JButton enterButton = new JButton ("Enter");
-	enterButton.addActionListener (
-            new ActionListener () {
-		public void actionPerformed (ActionEvent a)
-		{
-		    hasEntered = true;
-		}
-	    }
-        );
-	bottomPanel.add (enterButton);
-	panel.add (bottomPanel);
 	if (! sequencingOn) {
 	    cPane.add (panel, BorderLayout.SOUTH);
 	}
@@ -669,26 +647,13 @@ public class DrawTool extends JPanel {
 	}
         cPane.add (drawArea, BorderLayout.CENTER);
 
-	drawArea.addMouseListener (
-	   new MouseAdapter () 
-	   {
-	       public void mouseClicked (MouseEvent e)
-	       {
-		   handleMouseClick (e);
-	       }
-	       public void mouseReleased (MouseEvent e)
-	       {
-		   handleMouseReleased (e);
-	       }
-	   }
-        );
 
 	drawArea.addMouseMotionListener (
-	   new MouseMotionAdapter () 
+	   new MouseMotionAdapter ()
 	   {
 	       public void mouseDragged (MouseEvent e)
 	       {
-		   handleMouseDragged (e);
+		//   handleMouseDragged (e);
 	       }
 	   }
         );
@@ -786,7 +751,7 @@ public class DrawTool extends JPanel {
         g.drawLine (inset,inset, inset,D.height-inset);
         g.drawLine (inset,inset, D.width-inset, inset);
 
-        
+
         double xDelta = (maxX-minX) / numIntervals;
 
 
@@ -814,7 +779,7 @@ public class DrawTool extends JPanel {
 	// Zoom+move
 	Font savedFont = g.getFont();
 	g.setFont (plusFont);
-	g.drawString ("+", D.width-25, 20);  
+	g.drawString ("+", D.width-25, 20);
 	g.setFont (minusFont);
 	g.drawString ("-", D.width-25, 50);
 	drawArrow (g2d, D.width-70, 20, D.width-70, 0, 1.0f, lineStroke);   // Up
@@ -852,7 +817,7 @@ public class DrawTool extends JPanel {
     {
 	try {
 	    // Curves
-	    synchronized(curves) {	 
+	    synchronized(curves) {
 		for (DrawObject C: curves) {
 		    drawCurve (g, C);
 		}
@@ -860,7 +825,7 @@ public class DrawTool extends JPanel {
 
 	    // Images
 	    if (images != null) {
-		synchronized(images) {	 
+		synchronized(images) {
 		    for (DrawObject I: images) {
 			drawImage (g, I);
 		    }
@@ -868,14 +833,14 @@ public class DrawTool extends JPanel {
 	    }
 
 	    // Labels
-	    synchronized(labels) {	 
+	    synchronized(labels) {
 		for (DrawObject L: labels) {
 		    drawLabel (g, L);
 		}
 	    }
 
 	    // Eqn Lines
-	    synchronized(eqnLines) {	 
+	    synchronized(eqnLines) {
 		for (DrawObject L: eqnLines) {
 		    g.setColor (L.color);
 		    drawEqnLine (g, L);
@@ -883,7 +848,7 @@ public class DrawTool extends JPanel {
 	    }
 
 	    // Lines
-	    synchronized(lines) {	 
+	    synchronized(lines) {
 		for (DrawObject L: lines) {
 		    g.setColor (L.color);
 		    drawLine (g, L);
@@ -891,7 +856,7 @@ public class DrawTool extends JPanel {
 	    }
 
 	    // Rectangles
-	    synchronized(rectangles) {	 	 
+	    synchronized(rectangles) {
 		for (DrawObject R: rectangles) {
 		    g.setColor (R.color);
 		    drawOvalOrRectangle (g, R, true);
@@ -921,7 +886,7 @@ public class DrawTool extends JPanel {
     }
 
 
-    void drawPoint (Graphics g, DrawObject p) 
+    void drawPoint (Graphics g, DrawObject p)
     {
 	if (p == null) {
 	    return;
@@ -989,7 +954,7 @@ public class DrawTool extends JPanel {
     }
 
     // From: http://forum.java.sun.com/thread.jspa?threadID=378460&tstart=135
-    void drawArrow (Graphics2D g2d, int xCenter, int yCenter, int x, int y, float stroke, BasicStroke drawStroke) 
+    void drawArrow (Graphics2D g2d, int xCenter, int yCenter, int x, int y, float stroke, BasicStroke drawStroke)
     {
 	double aDir = Math.atan2 (xCenter-x, yCenter-y);
 	// Line can be dashed.
@@ -1012,17 +977,17 @@ public class DrawTool extends JPanel {
 	g2d.fillPolygon(tmpPoly);
     }
 
-    private int yCor (int len, double dir) 
+    private int yCor (int len, double dir)
     {
 	return (int)(len * Math.cos(dir));
     }
 
-    private int xCor (int len, double dir) 
+    private int xCor (int len, double dir)
     {
 	return (int)(len * Math.sin(dir));
     }
 
-    void drawImage (Graphics g, DrawObject I) 
+    void drawImage (Graphics g, DrawObject I)
     {
 	if ((sequencingOn) && (I.sequenceNum!=currentSequenceNumDisplay)) {
 	    return;
@@ -1045,7 +1010,7 @@ public class DrawTool extends JPanel {
     }
 
 
-    void drawLabel (Graphics g, DrawObject L) 
+    void drawLabel (Graphics g, DrawObject L)
     {
 	if ((sequencingOn) && (L.sequenceNum!=currentSequenceNumDisplay)) {
 	    return;
@@ -1057,7 +1022,7 @@ public class DrawTool extends JPanel {
     }
 
 
-    void drawScribbles (Graphics g) 
+    void drawScribbles (Graphics g)
     {
 	if ((scribbles == null) || (scribbles.size() == 0)) {
 	    return;
@@ -1117,7 +1082,7 @@ public class DrawTool extends JPanel {
 	if ((sequencingOn) && (L.sequenceNum!=currentSequenceNumDisplay)) {
 	    return;
 	}
-	// First, special cases: 
+	// First, special cases:
 	if ((L.a == 0) && (L.b == 0)) {
 	    return;
 	}
