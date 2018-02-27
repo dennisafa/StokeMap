@@ -36,6 +36,12 @@ public class RGBTriangle {
 
     public static void diffTriangle (double xStart, double xEnd, double yStart, double yEnd, double diff)
     {
+        xyRGB = new HashMap<>();
+        getRColor = new HashMap<>();
+        getBColor = new HashMap<>();
+        getGColor = new HashMap<>();
+        getStokes = new HashMap<>();
+        getStokesRGB = new HashMap<>();
         generateMap.removeAll();
         generateMap.display();
         generateMap.setXYRange(xStart, xEnd, yStart, yEnd);
@@ -65,7 +71,6 @@ public class RGBTriangle {
                 }
             }
             generateMap.removeAll();
-
         }
 
     }

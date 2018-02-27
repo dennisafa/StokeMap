@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -21,9 +22,10 @@ import java.util.Scanner;
 
 public class mainFrame extends Application {
 
-    Button btn = new Button();
+    Button btnCalc = new Button();
     Button btnClose = new Button();
     Button openStoke = new Button();
+    Hyperlink help = new Hyperlink();
     TextField textFieldY = new TextField();
     TextField textFieldX = new TextField();
     TextField textFieldsS1 = new TextField();
@@ -49,6 +51,7 @@ public class mainFrame extends Application {
     public static HashMap<String, Double> stokesHash1 = new HashMap<String, Double>();
     public static HashMap<String, Double> stokesHash2 = new HashMap<>();
     public static HashMap<String, Double> stokesHash3 = new HashMap<>();
+    public static double difference = 0;
 
 
 
@@ -69,15 +72,14 @@ public class mainFrame extends Application {
         pane.setVgap(10);
         pane.setPadding(new Insets(10));
 
-        btn.setText("Calculate Stokes Parameters");
-        btn.setMinWidth(200);
-        btn.setDisable(true);
+        btnCalc.setText("Calculate Stokes Parameters");
+        btnCalc.setMinWidth(200);
+        btnCalc.setDisable(true);
         openStoke.setOnAction(ch);
         openStoke.setPrefWidth(230);
 
         lblX.setText("X Axis:");
         lblY.setText("Y Axis:");
-        caution.setText("Enter X and Y in values of +- 0.005");
         caution.setFont(Font.font("Helvica", 10));
 
         s1.setText("S1^2 = ");
@@ -88,6 +90,14 @@ public class mainFrame extends Application {
         b.setText("Value of B = ");
         nameC.setText("Color = ");
         openStoke.setText("Generate Color Map");
+        help.setText("User Manual");
+        header.setFont(Font.font("Bold"));
+        header.setFont(Font.font(15));
+        header.setText("by Dennis Afanasev");
+        topNote.setText("StokesMap");
+        topNote.setFont(Font.font("Courier", 40));
+        btnClose.setText("Exit");
+        help.setText("User Help");
 
         pane.setAlignment(Pos.CENTER_RIGHT);
         pane.add(lblX, 0, 1); // Setting the positions of each according to row and column
@@ -98,8 +108,9 @@ public class mainFrame extends Application {
         pane.add(textFieldsS2, 1, 4);
         pane.add(textFieldsS3, 1, 5);
         pane.add(caution, 1, 8);
+        pane.add(help, 1, 16);
         pane.add(openStoke, 1, 0);
-    //    pane.add (calcStoke, 1, 10);
+
         pane.add(valR, 1, 11);
         pane.add(r, 0, 11);
         pane.add(g, 0, 12);
@@ -109,15 +120,32 @@ public class mainFrame extends Application {
         pane.add(colorName, 1, 15);
         pane.add(nameC, 0, 15);
 
+        pane.add(s1, 0, 3); // Adding the labels
+        pane.add(s2, 0, 4);
+        pane.add(s3, 0, 5);
+        pane.add(btnCalc, 1, 6); // Adding the button
+
 
         openStoke.setOnMouseClicked(event -> {
             FileChooser chooseStoke = new FileChooser();
-          //  chooseStoke.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*txt"));
+            chooseStoke.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*txt"));
             File stokeVals = chooseStoke.showOpenDialog(new Stage());
             calcWithStokes(stokeVals);
+            caution.setText("Enter X and Y in values of : " + difference);
         });
 
-        btn.setOnMouseClicked(event -> calculateValues());
+        btnCalc.setOnMouseClicked(event -> calculateValues());
+
+        btnClose.setOnMouseClicked(event -> {
+            primaryStage.close();
+            System.exit(0);
+            // Close functionality
+        });
+
+        help.setOnMouseClicked(event -> {
+            getHostServices().showDocument("https://github.com/dennisafa/StokesMap/blob/master/README.md");
+        });
+
 
         textFieldX.setEditable(false);
         textFieldY.setEditable(false);
@@ -129,10 +157,6 @@ public class mainFrame extends Application {
         valG.setEditable(false);
         colorName.setEditable(false);
 
-        pane.add(s1, 0, 3); // Adding the labels
-        pane.add(s2, 0, 4);
-        pane.add(s3, 0, 5);
-        pane.add(btn, 1, 6); // Adding the button
 
         // Make columns neater
         ColumnConstraints col1 = new ColumnConstraints();
@@ -153,22 +177,13 @@ public class mainFrame extends Application {
         GridPane setText = new GridPane(); // Grids for button layouts
         GridPane setClose = new GridPane();
 
-        header.setFont(Font.font("Bold"));
-        header.setFont(Font.font(15));
-        header.setText("by Dennis Afanasev");
+
         //setName.setAlignment(Pos.BOTTOM_RIGHT);
 
-        topNote.setText("StokesMap");
-        topNote.setFont(Font.font("Courier", 40));
+
         setText.add(topNote, 3,3);
         setText.setAlignment(Pos.TOP_CENTER);
 
-        btnClose.setOnMouseClicked(event -> {
-            primaryStage.close();
-            System.exit(0);
-            // Close functionality
-        });
-        btnClose.setText("Exit");
         setClose.setHgap(50);
         setClose.setPadding(new Insets(10, 10, 10, 10));
         setClose.add(btnClose,0,0);
@@ -188,7 +203,7 @@ public class mainFrame extends Application {
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
         primaryStage.setMinWidth(750);
-        primaryStage.setMinHeight(550);
+        primaryStage.setMinHeight(650);
         primaryStage.setMaxHeight(850);
         primaryStage.setMaxWidth(650);
         primaryStage.show();
@@ -200,7 +215,7 @@ public class mainFrame extends Application {
             if (e.getSource() == openStoke) {
                 textFieldX.setEditable(true);
                 textFieldY.setEditable(true);
-                btn.setDisable(false);
+                btnCalc.setDisable(false);
             }
         }
     }
@@ -285,7 +300,6 @@ public class mainFrame extends Application {
             double stokes1 = 0;
             double stokes2 = 0;
             double stokes3 = 0;
-            double difference = 0;
             double[] addandsub = new double[2];
             int countAddorSub = 0;
             while (readStoke.hasNextDouble()) {
