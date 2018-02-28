@@ -128,7 +128,7 @@ public class mainFrame extends Application {
 
         openStoke.setOnMouseClicked(event -> {
             FileChooser chooseStoke = new FileChooser();
-            chooseStoke.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*txt"));
+        //    chooseStoke.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*txt"));
             File stokeVals = chooseStoke.showOpenDialog(new Stage());
             calcWithStokes(stokeVals);
             caution.setText("Enter X and Y in values of : " + difference);
