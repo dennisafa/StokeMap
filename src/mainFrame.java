@@ -12,6 +12,8 @@ import javafx.scene.layout.*;
 import javafx.scene.image.*;
 import org.apache.commons.io.FileUtils;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -50,6 +52,7 @@ public class mainFrame extends Application {
     public static HashMap<String, Double> stokesHash2 = new HashMap<>();
     public static HashMap<String, Double> stokesHash3 = new HashMap<>();
     public static double difference = 0;
+    public File color = new File ("ColorMap.png");
 
 
 
@@ -154,9 +157,9 @@ public class mainFrame extends Application {
                 confi.showAndWait();
 
 
-                File colorMap = new File ("src/ColorMap.png");
+            //    File colorMap = new File ("ColorMap.png");
                 File outputColorMap = new File (directoryChoose.getAbsolutePath());
-                FileUtils.copyFileToDirectory(colorMap, outputColorMap);
+                FileUtils.copyFileToDirectory(color, outputColorMap);
 
                 Alert downloaded = new Alert(Alert.AlertType.INFORMATION);
                 downloaded.setHeaderText("Color Map downloaded to " + directoryChoose.getAbsolutePath());
@@ -383,17 +386,6 @@ public class mainFrame extends Application {
         }
     }
 
-    public void savesTheImage (File image)
-    {
-        try {
-            FileWriter colorMap = new FileWriter(image);
-            colorMap.write("ColorMap");
-            colorMap.close();
-        } catch (IOException e) {
-            System.out.println ("File not found");
-        }
-
-    }
 
 
 }

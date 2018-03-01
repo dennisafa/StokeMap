@@ -7,7 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="234c4a6f-e516-403c-abdc-b4fb4676b7fc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/PolarizationApp.iml" afterPath="$PROJECT_DIR$/PolarizationApp.iml" />
+      <change beforePath="$PROJECT_DIR$/PolarizationApp.ipr" afterPath="$PROJECT_DIR$/PolarizationApp.ipr" />
+      <change beforePath="$PROJECT_DIR$/PolarizationApp.iws" afterPath="$PROJECT_DIR$/PolarizationApp.iws" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/PolarizationApp_jar/PolarizationApp.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/META-INF/MANIFEST.MF" />
+      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/RGBTriangle.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/RGBTriangle.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$ClickHandler.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$ClickHandler.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class" />
       <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change beforePath="$PROJECT_DIR$/src/RGBTriangle.java" afterPath="$PROJECT_DIR$/src/RGBTriangle.java" />
+      <change beforePath="$PROJECT_DIR$/src/mainFrame.java" afterPath="$PROJECT_DIR$/src/mainFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RGBTriangle.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RGBTriangle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RGBTriangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-543">
-              <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            <state relative-caret-position="201">
+              <caret line="80" column="62" lean-forward="true" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,15 +53,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1717">
-              <caret line="166" column="57" lean-forward="false" selection-start-line="166" selection-start-column="57" selection-end-line="166" selection-end-column="57" />
+            <state relative-caret-position="141">
+              <caret line="187" column="80" lean-forward="true" selection-start-line="187" selection-start-column="80" selection-end-line="187" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1746#1747#0" expanded="true" />
-                <element signature="e#1774#1775#0" expanded="true" />
+                <element signature="e#1864#1865#0" expanded="true" />
+                <element signature="e#1892#1893#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,8 +70,18 @@
       <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../Apache/commons-io-2.6.jar!/META-INF/maven/commons-io/commons-io/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -159,10 +179,10 @@
         <option value="$PROJECT_DIR$/Source Code/mainFrame.java" />
         <option value="$PROJECT_DIR$/Source Code/DrawTool.java" />
         <option value="$PROJECT_DIR$/src/DrawTool.java" />
-        <option value="$PROJECT_DIR$/src/RGBTriangle.java" />
         <option value="$PROJECT_DIR$/src/FileUtils.java" />
-        <option value="$PROJECT_DIR$/src/mainFrame.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+        <option value="$PROJECT_DIR$/src/mainFrame.java" />
+        <option value="$PROJECT_DIR$/src/RGBTriangle.java" />
       </list>
     </option>
   </component>
@@ -180,7 +200,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="19" />
+    <option name="x" value="6" />
     <option name="y" value="23" />
     <option name="width" value="1267" />
     <option name="height" value="733" />
@@ -220,36 +240,7 @@
             </path>
             <path>
               <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="PolarizationApp_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Apache" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Apache" type="70bed36:NamedLibraryElementNode" />
-              <item name="commons-io-2.6.jar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -269,12 +260,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="buildGui&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buildGUI&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buildG&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buil&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;JTextFiel&#9;PSI&#9;JAVA://javax.swing.JTextField&#10;pointDia&#9;PSI&#9;JAVA://DrawTool#pointDiameter" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/application" />
     </key>
@@ -454,12 +446,12 @@
       <workItem from="1519742406897" duration="14455000" />
       <workItem from="1519833814571" duration="5533000" />
       <workItem from="1519870770721" duration="1222000" />
-      <workItem from="1519883145551" duration="11619000" />
+      <workItem from="1519883145551" duration="16240000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101929000" />
+    <option name="totallyTimeSpent" value="106550000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -471,8 +463,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="19" y="23" width="1267" height="733" extended-state="0" />
-    <editor active="true" />
+    <frame x="6" y="23" width="1267" height="733" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31872213" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -483,11 +474,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.20527618" sideWeight="0.5014245" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.4985755" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23600605" sideWeight="0.4985755" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14522494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14522494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34039333" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -516,54 +507,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DrawTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="72" column="32" lean-forward="false" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
-          <folding>
-            <element signature="e#7338#7339#0" expanded="true" />
-            <element signature="e#7379#7380#0" expanded="true" />
-            <element signature="e#7464#7465#0" expanded="true" />
-            <element signature="e#7504#7505#0" expanded="true" />
-            <element signature="e#7566#7567#0" expanded="true" />
-            <element signature="e#7602#7603#0" expanded="true" />
-            <element signature="e#7656#7657#0" expanded="true" />
-            <element signature="e#7688#7689#0" expanded="true" />
-            <element signature="e#10549#10550#0" expanded="true" />
-            <element signature="e#10598#10599#0" expanded="true" />
-            <element signature="e#11898#11899#0" expanded="true" />
-            <element signature="e#11953#11954#0" expanded="true" />
-            <element signature="e#12018#12019#0" expanded="true" />
-            <element signature="e#12071#12072#0" expanded="true" />
-            <element signature="e#12136#12137#0" expanded="true" />
-            <element signature="e#12191#12192#0" expanded="true" />
-            <element signature="e#12256#12257#0" expanded="true" />
-            <element signature="e#12309#12310#0" expanded="true" />
-            <element signature="e#12375#12376#0" expanded="true" />
-            <element signature="e#12428#12429#0" expanded="true" />
-            <element signature="e#12626#12627#0" expanded="true" />
-            <element signature="e#12685#12686#0" expanded="true" />
-            <element signature="e#13358#13359#0" expanded="true" />
-            <element signature="e#13401#13402#0" expanded="true" />
-            <element signature="e#13451#13452#0" expanded="true" />
-            <element signature="e#13487#13488#0" expanded="true" />
-            <element signature="e#14184#14185#0" expanded="true" />
-            <element signature="e#14213#14214#0" expanded="true" />
-            <element signature="e#14264#14265#0" expanded="true" />
-            <element signature="e#14294#14295#0" expanded="true" />
-            <element signature="e#17281#17417#0" expanded="true" />
-            <element signature="e#17416#17417#0" expanded="true" />
-            <element signature="e#19120#19121#0" expanded="true" />
-            <element signature="e#19150#19151#0" expanded="true" />
-            <element signature="e#27035#27036#0" expanded="true" />
-            <element signature="e#27077#27078#0" expanded="true" />
-            <element signature="e#27127#27128#0" expanded="true" />
-            <element signature="e#27169#27170#0" expanded="true" />
-            <marker date="1519885029000" expanded="true" signature="30100:32627" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stokeParam.txt" />
     <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -571,8 +514,8 @@
           <caret line="191" column="106" lean-forward="false" selection-start-line="191" selection-start-column="106" selection-end-line="191" selection-end-column="106" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -642,8 +585,8 @@
           <caret line="273" column="32" lean-forward="false" selection-start-line="273" selection-start-column="32" selection-end-line="273" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -713,8 +656,8 @@
           <caret line="261" column="33" lean-forward="true" selection-start-line="261" selection-start-column="33" selection-end-line="261" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -735,8 +678,8 @@
           <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -757,8 +700,8 @@
           <caret line="199" column="45" lean-forward="true" selection-start-line="199" selection-start-column="45" selection-end-line="199" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -827,8 +770,8 @@
           <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -897,8 +840,8 @@
           <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -967,8 +910,8 @@
           <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1037,8 +980,8 @@
           <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1107,8 +1050,8 @@
           <caret line="102" column="37" lean-forward="true" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1129,8 +1072,8 @@
           <caret line="135" column="43" lean-forward="true" selection-start-line="135" selection-start-column="43" selection-end-line="135" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1151,8 +1094,8 @@
           <caret line="150" column="0" lean-forward="true" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1177,11 +1120,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/image1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ColorMap.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1252,32 +1190,45 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
+    <entry file="jar://$PROJECT_DIR$/../Apache/commons-io-2.6.jar!/META-INF/maven/commons-io/commons-io/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="166" column="57" lean-forward="false" selection-start-line="166" selection-start-column="57" selection-end-line="166" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1774#1775#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ColorMap.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/RGBTriangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-543">
-          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state relative-caret-position="201">
+          <caret line="80" column="62" lean-forward="true" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="187" column="80" lean-forward="true" selection-start-line="187" selection-start-column="80" selection-end-line="187" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1864#1865#0" expanded="true" />
+            <element signature="e#1892#1893#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1348,6 +1299,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

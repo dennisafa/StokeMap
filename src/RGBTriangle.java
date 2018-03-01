@@ -76,9 +76,9 @@ public class RGBTriangle {
             }
         try {
             img = new BufferedImage(DrawTool.frame.getWidth(), DrawTool.frame.getHeight(), BufferedImage.TYPE_INT_RGB);
-            DrawTool.frame.paint(img.getGraphics());
-            File outputfile = new File("src/ColorMap.png");
-            ImageIO.write(img, "png", outputfile);
+            DrawTool.frame.paint(RGBTriangle.img.getGraphics());
+            File outputfile = new File("ColorMap.png");
+            ImageIO.write(RGBTriangle.img, "png", outputfile);
         } catch (IOException e) {
             System.out.println ("Created the image did not work");
         }
