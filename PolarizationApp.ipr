@@ -8,12 +8,6 @@
       </root>
     </artifact>
   </component>
-  <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/src/stokeParam.txt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/stokeParam.txt" charset="UTF-16" />
-    <file url="file://$PROJECT_DIR$/src/stokes.txt" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/stokesFormat.txt" charset="ISO-8859-1" />
-  </component>
   <component name="InspectionProjectProfileManager">
     <profile version="1.0">
       <option name="myName" value="Project Default" />
@@ -184,6 +178,16 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="java">
+      <CLASSES />
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://$USER_HOME$/Documents/commons-io-2.6-src/src/main/java" />
+        <root url="file://$USER_HOME$/Documents/commons-io-2.6-src/src/test/java" />
+      </SOURCES>
+    </library>
   </component>
   <component name="masterDetails">
     <states>

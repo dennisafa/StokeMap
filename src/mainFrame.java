@@ -3,19 +3,19 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
+import org.apache.commons.io.FileUtils;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
+
 
 public class mainFrame extends Application {
 
@@ -95,6 +95,7 @@ public class mainFrame extends Application {
         topNote.setFont(Font.font("Courier", 40));
         btnClose.setText("Exit");
         help.setText("User Help");
+        saveImage.setText("Download ColorMap Image");
 
         pane.setAlignment(Pos.CENTER_RIGHT);
         pane.add(lblX, 0, 1); // Setting the positions of each according to row and column
@@ -105,7 +106,7 @@ public class mainFrame extends Application {
         pane.add(textFieldsS2, 1, 4);
         pane.add(textFieldsS3, 1, 5);
         pane.add(caution, 1, 8);
-        pane.add(help, 1, 16);
+        pane.add(help, 1, 17);
         pane.add(openStoke, 1, 0);
 
         pane.add(valR, 1, 11);
@@ -116,7 +117,7 @@ public class mainFrame extends Application {
         pane.add(valB, 1, 13);
         pane.add(colorName, 1, 15);
         pane.add(nameC, 0, 15);
-    // Not working yet    pane.add(saveImage, 1, 16);
+        pane.add(saveImage, 1, 16);
 
         pane.add(s1, 0, 3); // Adding the labels
         pane.add(s2, 0, 4);
@@ -134,7 +135,7 @@ public class mainFrame extends Application {
         btnCalc.setOnMouseClicked(event -> calculateValues());
 
         btnClose.setOnMouseClicked(event -> {
-            primaryStage.close();
+         //   primaryStage.close();
             System.exit(0);
             // Close functionality
         });
@@ -143,7 +144,30 @@ public class mainFrame extends Application {
             getHostServices().showDocument("https://github.com/dennisafa/StokesMap/blob/master/README.md");
         });
 
-    //    saveImage.setOnMouseClicked(event -> savesTheImage()); // Not working yet
+        saveImage.setOnMouseClicked(event -> {
+            try {
+                DirectoryChooser choose = new DirectoryChooser();
+                File directoryChoose = choose.showDialog(primaryStage);
+
+                Alert confi = new Alert(Alert.AlertType.CONFIRMATION);
+                confi.setHeaderText("Confirm download to " + directoryChoose.getAbsolutePath());
+                confi.showAndWait();
+
+
+                File colorMap = new File ("src/ColorMap.png");
+                File outputColorMap = new File (directoryChoose.getAbsolutePath());
+                FileUtils.copyFileToDirectory(colorMap, outputColorMap);
+                
+                Alert downloaded = new Alert(Alert.AlertType.INFORMATION);
+                downloaded.setHeaderText("Color Map downloaded to " + directoryChoose.getAbsolutePath());
+                downloaded.showAndWait();
+
+
+            } catch (IOException e) {
+                System.out.println ("Not written image");
+            }
+
+        });
 
 
         textFieldX.setEditable(false); // Don't want the results edited
@@ -155,6 +179,7 @@ public class mainFrame extends Application {
         valB.setEditable(false);
         valG.setEditable(false);
         colorName.setEditable(false);
+        saveImage.setDisable(true);
 
 
         ColumnConstraints col1 = new ColumnConstraints(); // Make columns neater
@@ -215,6 +240,7 @@ public class mainFrame extends Application {
                 textFieldX.setEditable(true);
                 textFieldY.setEditable(true);
                 btnCalc.setDisable(false);
+                saveImage.setDisable(false);
             }
         }
     }
@@ -261,6 +287,8 @@ public class mainFrame extends Application {
             return "Blue";
         }
     }
+
+
 
 
     public void calcWithStokes(File checkStoke)
@@ -355,13 +383,15 @@ public class mainFrame extends Application {
         }
     }
 
-    public void savesTheImage ()
+    public void savesTheImage (File image)
     {
-
-
-
-
-
+        try {
+            FileWriter colorMap = new FileWriter(image);
+            colorMap.write("ColorMap");
+            colorMap.close();
+        } catch (IOException e) {
+            System.out.println ("File not found");
+        }
 
     }
 

@@ -6,6 +6,7 @@
 //
 // A simple widget for drawing, animation and text input.
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -85,7 +86,7 @@ public class DrawTool extends JPanel {
     static boolean sequencingOn = false;
 
     // GUI elements.
-    static JFrame frame;
+    public static JFrame frame;
     static JLabel statusLabel = new JLabel (" ");
     static JLabel outputLabel = new JLabel (" ");
     static JTextField inputField = new JTextField (20);
@@ -153,11 +154,11 @@ public class DrawTool extends JPanel {
 	currentSequenceNum ++;
     }
 
-    public static void display ()
+    public void display ()
     {
 	// Store reference to frame for use in dialogs.
         frame = new JFrame ();
-	buildGUI ();
+        buildGUI ();
         frame.setVisible (true);
     }
 
@@ -609,7 +610,7 @@ public class DrawTool extends JPanel {
     }
 
 
-    static void buildGUI ()
+    void buildGUI()
     {
 	// Need this size to balance axes.
         frame.setSize (520, 690);
@@ -628,7 +629,6 @@ public class DrawTool extends JPanel {
 	panel.setBackground (inputPanelColor);
 	panel.setLayout (new GridLayout (2,1));
 	panel.add (outputLabel);
-	JPanel bottomPanel = new JPanel ();
 	if (! sequencingOn) {
 	    cPane.add (panel, BorderLayout.SOUTH);
 	}
@@ -658,7 +658,9 @@ public class DrawTool extends JPanel {
 	   }
         );
 
+
     }
+
 
     static void handleMouseClick (MouseEvent e)
     {

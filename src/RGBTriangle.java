@@ -1,4 +1,7 @@
-import java.math.BigDecimal;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 public class RGBTriangle {
 
@@ -15,6 +18,7 @@ public class RGBTriangle {
     public static int g1;
     public static int b1;
     public static DrawTool generateMap = new DrawTool();
+    public static BufferedImage img;
 /*
     public static void createRGBTriangle ()
     {
@@ -70,7 +74,15 @@ public class RGBTriangle {
                     generateMap.drawPointTriangle(x, y);
                 }
             }
-            generateMap.removeAll();
+        try {
+            img = new BufferedImage(DrawTool.frame.getWidth(), DrawTool.frame.getHeight(), BufferedImage.TYPE_INT_RGB);
+            DrawTool.frame.paint(img.getGraphics());
+            File outputfile = new File("src/ColorMap.png");
+            ImageIO.write(img, "png", outputfile);
+        } catch (IOException e) {
+            System.out.println ("Created the image did not work");
+        }
+        generateMap.removeAll();
         }
 
     }
