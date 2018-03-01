@@ -7,22 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="234c4a6f-e516-403c-abdc-b4fb4676b7fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/PolarizationApp.iml" afterPath="$PROJECT_DIR$/PolarizationApp.iml" />
-      <change beforePath="$PROJECT_DIR$/PolarizationApp.ipr" afterPath="$PROJECT_DIR$/PolarizationApp.ipr" />
-      <change beforePath="$PROJECT_DIR$/PolarizationApp.iws" afterPath="$PROJECT_DIR$/PolarizationApp.iws" />
-      <change beforePath="$PROJECT_DIR$/Source Code/DrawTool.java" afterPath="$PROJECT_DIR$/src/DrawTool.java" />
-      <change beforePath="$PROJECT_DIR$/Source Code/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change beforePath="$PROJECT_DIR$/Source Code/RGBTriangle.java" afterPath="$PROJECT_DIR$/src/RGBTriangle.java" />
-      <change beforePath="$PROJECT_DIR$/Source Code/ScreenImage.java" afterPath="$PROJECT_DIR$/src/ScreenImage.java" />
-      <change beforePath="$PROJECT_DIR$/Source Code/mainFrame.java" afterPath="$PROJECT_DIR$/src/mainFrame.java" />
-      <change beforePath="$PROJECT_DIR$/Source Code/triangle.png" afterPath="$PROJECT_DIR$/src/triangle.png" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/DrawObject.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/DrawObject.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool$1.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool$2.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/RGBTriangle.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/RGBTriangle.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$ClickHandler.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$ClickHandler.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class" />
+      <change beforePath="$PROJECT_DIR$/Built/artifacts/PolarizationApp_jar/PolarizationApp.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/DrawObject.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/DrawTool$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/DrawTool$2.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/DrawTool.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/META-INF/MANIFEST.MF" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/RGBTriangle.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/ScreenImage.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/mainFrame$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/mainFrame$ClickHandler.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/mainFrame.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/triangle.png" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
-              <caret line="159" column="16" lean-forward="false" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
+              <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1746#1747#0" expanded="true" />
@@ -203,24 +199,6 @@
             <path>
               <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
-              <item name="Built" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
-              <item name="Built" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
-              <item name="Built" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="PolarizationApp_jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
@@ -434,12 +412,12 @@
       <workItem from="1519742406897" duration="14455000" />
       <workItem from="1519833814571" duration="5533000" />
       <workItem from="1519870770721" duration="1222000" />
-      <workItem from="1519883145551" duration="9651000" />
+      <workItem from="1519883145551" duration="9711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99961000" />
+    <option name="totallyTimeSpent" value="100021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -452,7 +430,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="23" width="1267" height="733" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31872213" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -467,7 +444,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14522494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14522494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14069591" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1252,7 +1229,7 @@
     <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="159" column="16" lean-forward="false" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
+          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1746#1747#0" expanded="true" />
