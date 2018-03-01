@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -13,7 +14,11 @@ import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
+import sun.awt.image.OffScreenImage;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageProducer;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +30,7 @@ public class mainFrame extends Application {
     Button btnCalc = new Button();
     Button btnClose = new Button();
     Button openStoke = new Button();
+    Button saveImage = new Button();
     Hyperlink help = new Hyperlink();
     TextField textFieldY = new TextField();
     TextField textFieldX = new TextField();
@@ -48,7 +54,7 @@ public class mainFrame extends Application {
     Label b = new Label();
     Label nameC = new Label();
 
-    public static HashMap<String, Double> stokesHash1 = new HashMap<String, Double>();
+    public static HashMap<String, Double> stokesHash1 = new HashMap<>();
     public static HashMap<String, Double> stokesHash2 = new HashMap<>();
     public static HashMap<String, Double> stokesHash3 = new HashMap<>();
     public static double difference = 0;
@@ -119,12 +125,12 @@ public class mainFrame extends Application {
         pane.add(valB, 1, 13);
         pane.add(colorName, 1, 15);
         pane.add(nameC, 0, 15);
+    // Not working yet    pane.add(saveImage, 1, 16);
 
         pane.add(s1, 0, 3); // Adding the labels
         pane.add(s2, 0, 4);
         pane.add(s3, 0, 5);
         pane.add(btnCalc, 1, 6); // Adding the button
-
 
         openStoke.setOnMouseClicked(event -> {
             FileChooser chooseStoke = new FileChooser();
@@ -146,10 +152,12 @@ public class mainFrame extends Application {
             getHostServices().showDocument("https://github.com/dennisafa/StokesMap/blob/master/README.md");
         });
 
+        saveImage.setOnMouseClicked(event -> savesTheImage()); // Not working yet
 
-        textFieldX.setEditable(false);
+
+        textFieldX.setEditable(false); // Don't want the results edited
         textFieldY.setEditable(false);
-        textFieldsS1.setEditable(false); // Don't want the results edited
+        textFieldsS1.setEditable(false);
         textFieldsS2.setEditable(false);
         textFieldsS3.setEditable(false);
         valR.setEditable(false);
@@ -158,8 +166,7 @@ public class mainFrame extends Application {
         colorName.setEditable(false);
 
 
-        // Make columns neater
-        ColumnConstraints col1 = new ColumnConstraints();
+        ColumnConstraints col1 = new ColumnConstraints(); // Make columns neater
         col1.setPercentWidth(29);
         pane.getColumnConstraints().addAll(col1);
 
@@ -211,7 +218,7 @@ public class mainFrame extends Application {
     }
     private class ClickHandler implements EventHandler<ActionEvent> {
         @Override
-        public void handle (ActionEvent e){
+        public void handle (ActionEvent e){ // Once a file is uploaded, we may make the x and y selectable
             if (e.getSource() == openStoke) {
                 textFieldX.setEditable(true);
                 textFieldY.setEditable(true);
@@ -262,29 +269,7 @@ public class mainFrame extends Application {
             return "Blue";
         }
     }
-    /*
-    public void formatStokes (File stokesParam)
-    {
-        try {
-            Scanner readFile = new Scanner(stokesParam);
-            PrintWriter writer = new PrintWriter("src/stokes.txt", "UTF-8");
-            int i = 0;
-            while (readFile.hasNextLine()) {
-                while (readFile.hasNextDouble()) {
-                    writer.println(String.format("%.5f", readFile.nextDouble()));
-                    i++;
-                    if (i == 5) {
-                        writer.println();
-                        i = 0;
-                    }
-                }
-            }
-            writer.close();
-        } catch (Exception e) {
-            System.out.println ("Error: formatStokes did not recognize the file");
-        }
-    }
-    */
+
 
     public void calcWithStokes(File checkStoke)
     {
@@ -300,26 +285,34 @@ public class mainFrame extends Application {
             double stokes1 = 0;
             double stokes2 = 0;
             double stokes3 = 0;
-            double[] addandsub = new double[2];
-            int countAddorSub = 0;
+            double[] diffBetweenX = new double[2];
+            double[] diffBetweenY = new double[2];// This array will hold the values to store what to add and subtract
+            int countAddorSubX = 0;
+            int countAddorSubY = 0;
             while (readStoke.hasNextDouble()) {
-                counter = 0;
+                counter = 0; // Reset the counter
                 StringBuffer hashCodeXY = new StringBuffer(); // Appending the xy values to the hash map
                 StringBuffer hashStoke1 = new StringBuffer();
                 StringBuffer hashStoke2 = new StringBuffer();
                 StringBuffer hashStoke3 = new StringBuffer();
-                while (counter < 2) { // Build the string for the two xy values
+                while (counter < 2) { // Build the string for the two xy values (the first two doubles must be x and y)
+
                     if (counter < 1) {
                         double x = (double) Math.round(readStoke.nextDouble() * 100) / 100;
-                       // Check for the maxX and minX to pass into the RGB creator
-                        if (x > maxX) {
+                        if (x > maxX) { // Check for the maxX and minX (this will be the parameter in the
                             maxX = x;
                         }
                         if (x < minX) {
                             minX = x;
                         }
                         hashCodeXY.append(x + ",");
+
+                        if (countAddorSubX < 2) {
+                            diffBetweenY[countAddorSubY] = x;
+                        }
+                        countAddorSubX++;
                     }
+
                     else {
                         double y = (double) Math.round(readStoke.nextDouble() * 100) / 100;
                         if (y > maxY) {
@@ -330,13 +323,14 @@ public class mainFrame extends Application {
                         }
                         hashCodeXY.append(y);
 
-                        if (countAddorSub < 2) {
-                            addandsub[countAddorSub] = y;
+                        if (countAddorSubY < 2) {
+                            diffBetweenY[countAddorSubY] = y;
                         }
-                        countAddorSub++;
+                        countAddorSubY++;
                     }
-                    counter++;
-                    if (counter == 2) { // Move on to the stokes
+                    counter++; // increment the counter
+
+                    if (counter == 2) { // Move on to the stokes values, which are the next 3 values after the X and Y
                         while (counter < 5) {
                             if (counter == 2) {
                                 stokes1 = readStoke.nextDouble();
@@ -352,15 +346,34 @@ public class mainFrame extends Application {
                         }
                     }
                 }
+
                 stokesHash1.put(hashCodeXY.toString(), stokes1);
                 stokesHash2.put(hashCodeXY.toString(), stokes2);
                 stokesHash3.put(hashCodeXY.toString(), stokes3);
+
             }
-            difference = addandsub[1] - addandsub[0];
-            System.out.println (difference);
+            double diffX = diffBetweenX[1] - diffBetweenX[0];
+            double diffY = diffBetweenY[1] - diffBetweenY[0];
+
+            difference = Math.max(diffX, diffY);
+
+
+
             RGBTriangle.diffTriangle(minX, maxX, minY, maxY, (double) Math.round(difference * 100) / 100);
         } catch (Exception e) {
             System.out.println ("File not found");
         }
     }
+
+    public void savesTheImage ()
+    {
+
+
+
+
+
+
+    }
+
+
 }

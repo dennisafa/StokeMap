@@ -44,7 +44,7 @@ public class RGBTriangle {
         getStokesRGB = new HashMap<>();
         generateMap.removeAll();
         generateMap.display();
-        generateMap.setXYRange(xStart, xEnd, yStart, yEnd);
+        generateMap.setXYRange(xStart-1, xEnd+1, yStart-1, yEnd+1);
         //find ranges, xmax and xmin, ymax and ymin.
 
 
