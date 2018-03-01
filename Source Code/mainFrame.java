@@ -3,7 +3,6 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -14,16 +13,9 @@ import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.image.*;
-import sun.awt.image.OffScreenImage;
-
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageProducer;
 import java.io.*;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
-// Two cor, and 3 stokes parameters. Generate color map
 
 public class mainFrame extends Application {
 
@@ -63,7 +55,6 @@ public class mainFrame extends Application {
 
     public static void main (String[] argv)
     {
-        //formatStokes();
         launch(argv);
     }
 
@@ -137,7 +128,7 @@ public class mainFrame extends Application {
         //    chooseStoke.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*txt"));
             File stokeVals = chooseStoke.showOpenDialog(new Stage());
             calcWithStokes(stokeVals);
-            caution.setText("Enter X and Y in values of : " + difference);
+            caution.setText("Enter X and Y in values of : " + (double) Math.round(difference * 100) / 100);
         });
 
         btnCalc.setOnMouseClicked(event -> calculateValues());
@@ -152,7 +143,7 @@ public class mainFrame extends Application {
             getHostServices().showDocument("https://github.com/dennisafa/StokesMap/blob/master/README.md");
         });
 
-        saveImage.setOnMouseClicked(event -> savesTheImage()); // Not working yet
+    //    saveImage.setOnMouseClicked(event -> savesTheImage()); // Not working yet
 
 
         textFieldX.setEditable(false); // Don't want the results edited
@@ -216,6 +207,7 @@ public class mainFrame extends Application {
         primaryStage.show();
 
     }
+
     private class ClickHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle (ActionEvent e){ // Once a file is uploaded, we may make the x and y selectable
@@ -355,11 +347,9 @@ public class mainFrame extends Application {
             double diffX = diffBetweenX[1] - diffBetweenX[0];
             double diffY = diffBetweenY[1] - diffBetweenY[0];
 
-            difference = Math.max(diffX, diffY);
+            difference = Math.max(diffX, diffY); // what we'll increment by
 
-
-
-            RGBTriangle.diffTriangle(minX, maxX, minY, maxY, (double) Math.round(difference * 100) / 100);
+            RGBTriangle.diffTriangle(minX, maxX, minY, maxY, (double) Math.round(difference * 100) / 100); // finally, pass the parameters into drawtool
         } catch (Exception e) {
             System.out.println ("File not found");
         }
