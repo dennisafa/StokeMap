@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="234c4a6f-e516-403c-abdc-b4fb4676b7fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/PolarizationApp.ipr" afterPath="$PROJECT_DIR$/PolarizationApp.ipr" />
+      <change beforePath="$PROJECT_DIR$/PolarizationApp.iml" afterPath="$PROJECT_DIR$/PolarizationApp.iml" />
+      <change beforePath="$PROJECT_DIR$/PolarizationApp.iws" afterPath="$PROJECT_DIR$/PolarizationApp.iws" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +47,8 @@
       <file leaf-file-name="mainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2062">
-              <caret line="166" column="57" lean-forward="true" selection-start-line="166" selection-start-column="57" selection-end-line="166" selection-end-column="57" />
+            <state relative-caret-position="1717">
+              <caret line="166" column="57" lean-forward="false" selection-start-line="166" selection-start-column="57" selection-end-line="166" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1746#1747#0" expanded="true" />
@@ -161,6 +162,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="19" />
     <option name="y" value="23" />
@@ -216,7 +224,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="buildGui&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buildGUI&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buildG&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buil&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;JTextFiel&#9;PSI&#9;JAVA://javax.swing.JTextField&#10;pointDia&#9;PSI&#9;JAVA://DrawTool#pointDiameter" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
     <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
   </component>
   <component name="RecentsManager">
@@ -401,12 +409,12 @@
       <workItem from="1519742406897" duration="14455000" />
       <workItem from="1519833814571" duration="5533000" />
       <workItem from="1519870770721" duration="1222000" />
-      <workItem from="1519883145551" duration="10653000" />
+      <workItem from="1519883145551" duration="11253000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100963000" />
+    <option name="totallyTimeSpent" value="101563000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,7 +427,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="23" width="1267" height="733" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31872213" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -434,9 +441,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14522494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14522494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06807867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34039333" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1218,8 +1225,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2062">
-          <caret line="166" column="57" lean-forward="true" selection-start-line="166" selection-start-column="57" selection-end-line="166" selection-end-column="57" />
+        <state relative-caret-position="1717">
+          <caret line="166" column="57" lean-forward="false" selection-start-line="166" selection-start-column="57" selection-end-line="166" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1746#1747#0" expanded="true" />

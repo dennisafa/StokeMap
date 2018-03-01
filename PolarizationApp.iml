@@ -9,7 +9,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
-      <library>
+      <library name="Apache">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../Apache/commons-io-2.6.jar!/" />
         </CLASSES>
@@ -18,20 +18,11 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library>
+      <library name="Apache1">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../Apache/commons-io-2.6-tests.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES />
-        <JAVADOC>
-          <root url="jar://$MODULE_DIR$/../Apache/commons-io-2.6-javadoc.jar!/" />
-        </JAVADOC>
         <SOURCES />
       </library>
     </orderEntry>
