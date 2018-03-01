@@ -157,7 +157,7 @@ public class mainFrame extends Application {
                 File colorMap = new File ("src/ColorMap.png");
                 File outputColorMap = new File (directoryChoose.getAbsolutePath());
                 FileUtils.copyFileToDirectory(colorMap, outputColorMap);
-                
+
                 Alert downloaded = new Alert(Alert.AlertType.INFORMATION);
                 downloaded.setHeaderText("Color Map downloaded to " + directoryChoose.getAbsolutePath());
                 downloaded.showAndWait();

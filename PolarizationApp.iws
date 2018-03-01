@@ -7,18 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="234c4a6f-e516-403c-abdc-b4fb4676b7fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Built/artifacts/PolarizationApp_jar/PolarizationApp.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/DrawObject.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/DrawTool$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/DrawTool$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/DrawTool.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/META-INF/MANIFEST.MF" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/RGBTriangle.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/ScreenImage.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/mainFrame$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/mainFrame$ClickHandler.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/mainFrame.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Built/production/PolarizationApp/triangle.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/PolarizationApp.ipr" afterPath="$PROJECT_DIR$/PolarizationApp.ipr" />
+      <change beforePath="$PROJECT_DIR$/PolarizationApp.iws" afterPath="$PROJECT_DIR$/PolarizationApp.iws" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/PolarizationApp_jar/PolarizationApp.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/ColorMap.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/ColorMap.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/mainFrame.java" afterPath="$PROJECT_DIR$/src/mainFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,8 +52,8 @@
       <file leaf-file-name="mainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+            <state relative-caret-position="215">
+              <caret line="151" column="70" lean-forward="true" selection-start-line="151" selection-start-column="70" selection-end-line="151" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1746#1747#0" expanded="true" />
@@ -203,6 +198,11 @@
             <path>
               <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -222,7 +222,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -412,12 +412,12 @@
       <workItem from="1519742406897" duration="14455000" />
       <workItem from="1519833814571" duration="5533000" />
       <workItem from="1519870770721" duration="1222000" />
-      <workItem from="1519883145551" duration="9711000" />
+      <workItem from="1519883145551" duration="10258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100021000" />
+    <option name="totallyTimeSpent" value="100568000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1228,8 +1228,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+        <state relative-caret-position="215">
+          <caret line="151" column="70" lean-forward="true" selection-start-line="151" selection-start-column="70" selection-end-line="151" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1746#1747#0" expanded="true" />

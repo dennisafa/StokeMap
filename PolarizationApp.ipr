@@ -5,6 +5,8 @@
       <output-path>$PROJECT_DIR$/out/artifacts/PolarizationApp_jar</output-path>
       <root id="archive" name="PolarizationApp.jar">
         <element id="module-output" name="PolarizationApp" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/../Apache/commons-io-2.6.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/../Apache/commons-io-2.6-tests.jar" path-in-jar="/" />
       </root>
     </artifact>
   </component>
