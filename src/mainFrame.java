@@ -53,6 +53,7 @@ public class mainFrame extends Application {
     public static HashMap<String, Double> stokesHash3 = new HashMap<>();
     public static double difference = 0;
     public File color = new File ("ColorMap.png");
+    public static int fileVer = 0;
 
 
 
@@ -149,6 +150,7 @@ public class mainFrame extends Application {
 
         saveImage.setOnMouseClicked(event -> {
             try {
+                color = new File ("ColorMap" + fileVer + ".png");
                 DirectoryChooser choose = new DirectoryChooser();
                 File directoryChoose = choose.showDialog(primaryStage);
 
