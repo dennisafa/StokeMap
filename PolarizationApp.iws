@@ -7,17 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="234c4a6f-e516-403c-abdc-b4fb4676b7fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/PolarizationApp.iml" afterPath="$PROJECT_DIR$/PolarizationApp.iml" />
-      <change beforePath="$PROJECT_DIR$/PolarizationApp.ipr" afterPath="$PROJECT_DIR$/PolarizationApp.ipr" />
-      <change beforePath="$PROJECT_DIR$/PolarizationApp.iws" afterPath="$PROJECT_DIR$/PolarizationApp.iws" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/PolarizationApp_jar/PolarizationApp.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/META-INF/MANIFEST.MF" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/RGBTriangle.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/RGBTriangle.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$ClickHandler.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$ClickHandler.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change beforePath="$PROJECT_DIR$/src/RGBTriangle.java" afterPath="$PROJECT_DIR$/src/RGBTriangle.java" />
-      <change beforePath="$PROJECT_DIR$/src/mainFrame.java" afterPath="$PROJECT_DIR$/src/mainFrame.java" />
+      <change beforePath="$PROJECT_DIR$/ColorMap.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/res/ColorMap.png" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/RGBTriangle.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="201">
-              <caret line="80" column="62" lean-forward="true" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+              <caret line="80" column="62" lean-forward="false" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,8 +47,8 @@
       <file leaf-file-name="mainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="187" column="80" lean-forward="true" selection-start-line="187" selection-start-column="80" selection-end-line="187" selection-end-column="80" />
+            <state relative-caret-position="356">
+              <caret line="192" column="62" lean-forward="false" selection-start-line="192" selection-start-column="62" selection-end-line="192" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1864#1865#0" expanded="true" />
@@ -200,7 +191,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="6" />
+    <option name="x" value="27" />
     <option name="y" value="23" />
     <option name="width" value="1267" />
     <option name="height" value="733" />
@@ -231,12 +222,6 @@
               <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StokesMap" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PolarizationApp" type="b2602c69:ProjectViewProjectNode" />
@@ -446,12 +431,12 @@
       <workItem from="1519742406897" duration="14455000" />
       <workItem from="1519833814571" duration="5533000" />
       <workItem from="1519870770721" duration="1222000" />
-      <workItem from="1519883145551" duration="16240000" />
+      <workItem from="1519883145551" duration="16347000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106550000" />
+    <option name="totallyTimeSpent" value="106657000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -463,7 +448,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="6" y="23" width="1267" height="733" extended-state="0" />
+    <frame x="27" y="23" width="1267" height="733" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31872213" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -474,7 +459,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.20527618" sideWeight="0.5014245" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23600605" sideWeight="0.4985755" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23600605" sideWeight="0.4985755" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1214,7 +1199,7 @@
     <entry file="file://$PROJECT_DIR$/src/RGBTriangle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
-          <caret line="80" column="62" lean-forward="true" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+          <caret line="80" column="62" lean-forward="false" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1223,8 +1208,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="187" column="80" lean-forward="true" selection-start-line="187" selection-start-column="80" selection-end-line="187" selection-end-column="80" />
+        <state relative-caret-position="356">
+          <caret line="192" column="62" lean-forward="false" selection-start-line="192" selection-start-column="62" selection-end-line="192" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1864#1865#0" expanded="true" />
