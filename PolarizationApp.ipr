@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ArtifactManager">
-    <artifact type="jar" name="PolarizationApp:jar">
+    <artifact type="jar" build-on-make="true" name="PolarizationApp:jar">
       <output-path>$PROJECT_DIR$/out/artifacts/PolarizationApp_jar</output-path>
       <root id="archive" name="PolarizationApp.jar">
         <element id="module-output" name="PolarizationApp" />
@@ -180,16 +180,6 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-  </component>
-  <component name="libraryTable">
-    <library name="java">
-      <CLASSES />
-      <JAVADOC />
-      <SOURCES>
-        <root url="file://$USER_HOME$/Documents/commons-io-2.6-src/src/main/java" />
-        <root url="file://$USER_HOME$/Documents/commons-io-2.6-src/src/test/java" />
-      </SOURCES>
-    </library>
   </component>
   <component name="masterDetails">
     <states>
