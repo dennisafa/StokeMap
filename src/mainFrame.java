@@ -56,7 +56,8 @@ public class mainFrame extends Application {
     public File color = new File ("ColorMap.png");
     public static int fileVer = 0;
     public Stage primaryStage;
-    public Class<?> clazz;
+    public GridPane setIm = new GridPane();
+    public BorderPane root = new BorderPane();
 
 
 
@@ -68,9 +69,8 @@ public class mainFrame extends Application {
     @Override
     public void start (Stage primaryStage)
     {
-        BorderPane root = new BorderPane(); // root pane, with grid pane insertions
+        // root pane, with grid pane insertions
         GridPane pane = new GridPane();
-        GridPane setIm = new GridPane();
         ClickHandler ch = new ClickHandler();
         GridPane setText;
         GridPane setClose;
@@ -145,42 +145,14 @@ public class mainFrame extends Application {
          */
 
         /*
-        Next section will be button functionalities
+        Next section will be button functionalities and events.
          */
 
-        openStoke.setOnMouseClicked(event -> {
-            FileChooser chooseStoke = new FileChooser();
-            File stokeVals = chooseStoke.showOpenDialog(new Stage());
-            calcWithStokes(stokeVals);
-
-            try {
-                // Get the triangle image as a inputstream
-                Image image;
-                ImageView imageView;
-                InputStream input = new BufferedInputStream(new FileInputStream("ColorMap" + fileVer + ".png"));
-                image = new Image(input);
-                imageView = new ImageView(image);
-
-                imageView.setFitWidth(400); // Setting the images dimensions
-                imageView.setFitHeight(400);
-
-                setIm.add(imageView, 6, 4);
-                setIm.setAlignment(Pos.CENTER_RIGHT);
-            } catch (IOException e) {}
-
-            caution.setText("Enter X and Y in values of : " + (double) Math.round(difference * 100) / 100);
-            RGBTriangle.generateMap.close();
-        });
+        openStoke.setOnMouseClicked(e -> generateMap());
 
         btnCalc.setOnMouseClicked(event -> calculateValues());
 
-        btnExit.setOnMouseClicked(event -> {
-            for (int i=1; i<=fileVer; i++) {
-                File im = new File("ColorMap" + i + ".png");
-                im.deleteOnExit();
-            }
-            System.exit(0);
-        });
+        btnExit.setOnMouseClicked(event -> exitAndDelete());
 
         help.setOnMouseClicked(event -> getHostServices().showDocument("https://github.com/dennisafa/StokesMap/blob/master/README.md"));
 
@@ -226,23 +198,8 @@ public class mainFrame extends Application {
         ColumnConstraints col1 = new ColumnConstraints(); // Make columns neater
         col1.setPercentWidth(29);
         pane.getColumnConstraints().addAll(col1);
-
-        /*
-        Setting an image to the screen is next, which will be the RGB triangle screenshot
-         */
-
-
-        /*
-
-         */
-
         setText = new GridPane();
         setClose = new GridPane();
-
-
-        //setName.setAlignment(Pos.BOTTOM_RIGHT);
-
-
         setText.add(topNote, 3,3);
         setText.setAlignment(Pos.TOP_CENTER);
 
@@ -253,7 +210,6 @@ public class mainFrame extends Application {
 
         // Setting properties to the root pane
         root.setRight(pane);
-        root.setLeft(setIm);
         root.setTop(setText);
         root.setBottom(setClose);
         root.backgroundProperty().setValue(Background.EMPTY);
@@ -360,19 +316,33 @@ public class mainFrame extends Application {
         File stokeVals = chooseStoke.showOpenDialog(new Stage());
         calcWithStokes(stokeVals);
 
-        Class<?> clazz = this.getClass(); // Get the triangle image as a inputstream
-        InputStream input = clazz.getResourceAsStream("ColorMap" + fileVer + ".png");
-        Image image = new Image(input);
-        ImageView imageView = new ImageView(image);
+        try {
+            // Get the triangle image as a inputstream
+            Image image;
+            ImageView imageView;
+            InputStream input = new BufferedInputStream(new FileInputStream("ColorMap" + fileVer + ".png"));
+            image = new Image(input);
+            imageView = new ImageView(image);
 
-        imageView.setFitWidth(500); // Setting the images dimensions
-        imageView.setFitHeight(500);
-        GridPane setIm = new GridPane();
+            imageView.setFitWidth(400); // Setting the images dimensions
+            imageView.setFitHeight(400);
 
-        setIm.add(imageView, 6,4);
-        setIm.setAlignment(Pos.CENTER_RIGHT);
+            setIm.add(imageView, 6, 4);
+            setIm.setAlignment(Pos.CENTER_RIGHT);
+            root.setLeft(setIm);
+        } catch (IOException e) {}
 
         caution.setText("Enter X and Y in values of : " + (double) Math.round(difference * 100) / 100);
+        RGBTriangle.generateMap.close();
+    }
+
+    private void exitAndDelete ()
+    {
+        for (int i=1; i<=fileVer; i++) {
+            File im = new File("ColorMap" + i + ".png");
+            im.deleteOnExit();
+        }
+        System.exit(0);
     }
 
     private void calcWithStokes(File checkStoke)
@@ -467,7 +437,6 @@ public class mainFrame extends Application {
             double diffX = diffBetweenX[1] - diffBetweenX[0];
             double diffY = diffBetweenY[1] - diffBetweenY[0];
             difference = Math.max(diffX, diffY);
-
             /*
             Next, throw the parameters into the map creator
              */
