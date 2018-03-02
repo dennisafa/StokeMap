@@ -40,14 +40,18 @@ public class RGBTriangle {
 
     public static void diffTriangle (double xStart, double xEnd, double yStart, double yEnd, double diff)
     {
+        /*
+        r1 = 0;
+        g1 = 0;
+        b1 = 0;
+        */
         xyRGB = new HashMap<>();
         getRColor = new HashMap<>();
         getBColor = new HashMap<>();
         getGColor = new HashMap<>();
         getStokes = new HashMap<>();
         getStokesRGB = new HashMap<>();
-        generateMap.removeAll();
-        generateMap.display();
+        generateMap = new DrawTool();
         generateMap.setXYRange(xStart-1, xEnd+1, yStart-1, yEnd+1);
         //find ranges, xmax and xmin, ymax and ymin.
 
@@ -74,6 +78,7 @@ public class RGBTriangle {
                     generateMap.drawPointTriangle(x, y);
                 }
             }
+        generateMap.display();
         try {
             mainFrame.fileVer++;
             img = new BufferedImage(DrawTool.frame.getWidth(), DrawTool.frame.getHeight(), BufferedImage.TYPE_INT_RGB);
@@ -83,7 +88,6 @@ public class RGBTriangle {
         } catch (IOException e) {
             System.out.println ("Created the image did not work");
         }
-        generateMap.removeAll();
         }
 
     }

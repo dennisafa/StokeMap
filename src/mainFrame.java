@@ -12,17 +12,18 @@ import javafx.scene.layout.*;
 import javafx.scene.image.*;
 import org.apache.commons.io.FileUtils;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Stack;
+
+import static com.sun.org.apache.xerces.internal.utils.SecuritySupport.getResourceAsStream;
 
 
 public class mainFrame extends Application {
 
     Button btnCalc = new Button();
-    Button btnClose = new Button();
+    Button btnExit = new Button();
     Button openStoke = new Button();
     Button saveImage = new Button();
     Hyperlink help = new Hyperlink();
@@ -54,6 +55,8 @@ public class mainFrame extends Application {
     public static double difference = 0;
     public File color = new File ("ColorMap.png");
     public static int fileVer = 0;
+    public Stage primaryStage;
+    public Class<?> clazz;
 
 
 
@@ -67,7 +70,16 @@ public class mainFrame extends Application {
     {
         BorderPane root = new BorderPane(); // root pane, with grid pane insertions
         GridPane pane = new GridPane();
+        GridPane setIm = new GridPane();
         ClickHandler ch = new ClickHandler();
+        GridPane setText;
+        GridPane setClose;
+        Scene scene;
+
+
+        /*
+        Next sections are buttons layouts for the right side of the GUI
+         */
 
         pane.setHgap(10); // Spacings and the sort
         pane.setVgap(10);
@@ -97,7 +109,7 @@ public class mainFrame extends Application {
         header.setText("by Dennis Afanasev");
         topNote.setText("StokesMap");
         topNote.setFont(Font.font("Courier", 40));
-        btnClose.setText("Exit");
+        btnExit.setText("Exit");
         help.setText("User Help");
         saveImage.setText("Download ColorMap Image");
 
@@ -128,52 +140,71 @@ public class mainFrame extends Application {
         pane.add(s3, 0, 5);
         pane.add(btnCalc, 1, 6); // Adding the button
 
+        /*
+        End button setting section
+         */
+
+        /*
+        Next section will be button functionalities
+         */
+
         openStoke.setOnMouseClicked(event -> {
             FileChooser chooseStoke = new FileChooser();
-        //    chooseStoke.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*txt"));
             File stokeVals = chooseStoke.showOpenDialog(new Stage());
             calcWithStokes(stokeVals);
+
+            try {
+                // Get the triangle image as a inputstream
+                Image image;
+                ImageView imageView;
+                InputStream input = new BufferedInputStream(new FileInputStream("ColorMap" + fileVer + ".png"));
+                image = new Image(input);
+                imageView = new ImageView(image);
+
+                imageView.setFitWidth(400); // Setting the images dimensions
+                imageView.setFitHeight(400);
+
+                setIm.add(imageView, 6, 4);
+                setIm.setAlignment(Pos.CENTER_RIGHT);
+            } catch (IOException e) {}
+
             caution.setText("Enter X and Y in values of : " + (double) Math.round(difference * 100) / 100);
         });
 
         btnCalc.setOnMouseClicked(event -> calculateValues());
 
-        btnClose.setOnMouseClicked(event -> {
-         //   primaryStage.close();
-            System.exit(0);
-            // Close functionality
-        });
-
-        help.setOnMouseClicked(event -> {
-            getHostServices().showDocument("https://github.com/dennisafa/StokesMap/blob/master/README.md");
-        });
-
-        saveImage.setOnMouseClicked(event -> {
-            try {
-                color = new File ("ColorMap" + fileVer + ".png");
-                DirectoryChooser choose = new DirectoryChooser();
-                File directoryChoose = choose.showDialog(primaryStage);
-
-                Alert confi = new Alert(Alert.AlertType.CONFIRMATION);
-                confi.setHeaderText("Confirm download to " + directoryChoose.getAbsolutePath());
-                confi.showAndWait();
-
-
-            //    File colorMap = new File ("ColorMap.png");
-                File outputColorMap = new File (directoryChoose.getAbsolutePath());
-                FileUtils.copyFileToDirectory(color, outputColorMap);
-
-                Alert downloaded = new Alert(Alert.AlertType.INFORMATION);
-                downloaded.setHeaderText("Color Map downloaded to " + directoryChoose.getAbsolutePath());
-                downloaded.showAndWait();
-
-
-            } catch (IOException e) {
-                System.out.println ("Not written image");
+        btnExit.setOnMouseClicked(event -> {
+            for (int i=1; i<=fileVer; i++) {
+                File im = new File("ColorMap" + i + ".png");
+                im.deleteOnExit();
             }
-
+            System.exit(0);
         });
 
+        help.setOnMouseClicked(event -> getHostServices().showDocument("https://github.com/dennisafa/StokesMap/blob/master/README.md"));
+
+        saveImage.setOnMouseClicked(e -> setSaveImage());
+
+        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                for (int i=1; i<=fileVer; i++) {
+                    File im = new File("ColorMap" + i + ".png");
+                    im.deleteOnExit();
+                }
+                System.exit(0);
+            }
+        });
+
+        /*
+        End button functionality
+         */
+
+
+        /*
+        Set the text boxes editability status. Some will only enable after
+        a certain button has been clicked
+         */
 
         textFieldX.setEditable(false); // Don't want the results edited
         textFieldY.setEditable(false);
@@ -186,24 +217,26 @@ public class mainFrame extends Application {
         colorName.setEditable(false);
         saveImage.setDisable(true);
 
+        /*
+        End text box edit status
+         */
+
 
         ColumnConstraints col1 = new ColumnConstraints(); // Make columns neater
         col1.setPercentWidth(29);
         pane.getColumnConstraints().addAll(col1);
 
-        Class<?> clazz = this.getClass(); // Get the triangle image as a inputstream
-        InputStream input = clazz.getResourceAsStream("triangle.png");
-        Image image = new Image(input);
-        ImageView imageView = new ImageView(image);
+        /*
+        Setting an image to the screen is next, which will be the RGB triangle screenshot
+         */
 
-        imageView.setFitWidth(400); // Setting the images dimensions
-        imageView.setFitHeight(400);
-        GridPane setIm = new GridPane();
-        setIm.add(imageView, 6,4);
-        setIm.setAlignment(Pos.CENTER_RIGHT);
 
-        GridPane setText = new GridPane(); // Grids for button layouts
-        GridPane setClose = new GridPane();
+        /*
+
+         */
+
+        setText = new GridPane();
+        setClose = new GridPane();
 
 
         //setName.setAlignment(Pos.BOTTOM_RIGHT);
@@ -214,7 +247,7 @@ public class mainFrame extends Application {
 
         setClose.setHgap(50);
         setClose.setPadding(new Insets(10, 10, 10, 10));
-        setClose.add(btnClose,0,0);
+        setClose.add(btnExit,0,0);
         setClose.add(header, 10, 0);
 
         // Setting properties to the root pane
@@ -226,7 +259,7 @@ public class mainFrame extends Application {
 
 
         // Setting the scene and the stage
-        Scene scene = new Scene(root, 750, 550);
+        scene = new Scene(root, 750, 550);
         primaryStage.setTitle("StokesMap");
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
@@ -250,7 +283,7 @@ public class mainFrame extends Application {
         }
     }
 
-    public void calculateValues ()
+    private void calculateValues ()
     {
         String xText = textFieldX.getText(); // Getting the text
         String yText = textFieldY.getText();
@@ -280,7 +313,7 @@ public class mainFrame extends Application {
         textFieldsS3.setText(stokesHash3.get(xText + "," + yText).toString());
     }
 
-    public String setColor (int r, int g, int b)
+    private String setColor (int r, int g, int b)
     {
         if ((r > g) && (r > b)) {
             return "Red";
@@ -293,14 +326,57 @@ public class mainFrame extends Application {
         }
     }
 
-
-
-
-    public void calcWithStokes(File checkStoke)
+    private void setSaveImage ()
     {
         try {
-        //    File checkStoke = new File ("src/StokesMap.txt");
-        //    checkStoke.deleteOnExit();
+            color = new File ("ColorMap" + fileVer + ".png");
+            DirectoryChooser choose = new DirectoryChooser();
+            File directoryChoose = choose.showDialog(primaryStage);
+
+            Alert confi = new Alert(Alert.AlertType.CONFIRMATION);
+            confi.setHeaderText("Confirm download to " + directoryChoose.getAbsolutePath());
+            confi.showAndWait();
+
+            File outputColorMap = new File (directoryChoose.getAbsolutePath());
+            FileUtils.copyFileToDirectory(color, outputColorMap);
+
+            Alert downloaded = new Alert(Alert.AlertType.INFORMATION);
+            downloaded.setHeaderText("Color Map downloaded to " + directoryChoose.getAbsolutePath());
+            downloaded.showAndWait();
+
+
+        } catch (IOException e) {
+            Alert errorWriting = new Alert(Alert.AlertType.ERROR);
+            errorWriting.setTitle("Warning");
+            errorWriting.setHeaderText("File could not be downloaded");
+            errorWriting.showAndWait();
+        }
+    }
+
+    private void generateMap ()
+    {
+        FileChooser chooseStoke = new FileChooser();
+        File stokeVals = chooseStoke.showOpenDialog(new Stage());
+        calcWithStokes(stokeVals);
+
+        Class<?> clazz = this.getClass(); // Get the triangle image as a inputstream
+        InputStream input = clazz.getResourceAsStream("ColorMap" + fileVer + ".png");
+        Image image = new Image(input);
+        ImageView imageView = new ImageView(image);
+
+        imageView.setFitWidth(500); // Setting the images dimensions
+        imageView.setFitHeight(500);
+        GridPane setIm = new GridPane();
+
+        setIm.add(imageView, 6,4);
+        setIm.setAlignment(Pos.CENTER_RIGHT);
+
+        caution.setText("Enter X and Y in values of : " + (double) Math.round(difference * 100) / 100);
+    }
+
+    private void calcWithStokes(File checkStoke)
+    {
+        try {
             Scanner readStoke = new Scanner(checkStoke); // reading the formatted file
             int counter;
             double maxX = Double.NEGATIVE_INFINITY; // Compare for the max values to pass into the image creator
@@ -371,20 +447,37 @@ public class mainFrame extends Application {
                         }
                     }
                 }
+                /*
+                Finally, we put the 3 stokes parameters read off the file into a hash map, which relates
+                each x and y value (also counted) to the stoke value
+                 */
 
                 stokesHash1.put(hashCodeXY.toString(), stokes1);
                 stokesHash2.put(hashCodeXY.toString(), stokes2);
                 stokesHash3.put(hashCodeXY.toString(), stokes3);
 
             }
+
+            /*
+            Need to know how the loop in RGBTriangle will increment, so we take the difference between
+            the second values of x and y, and set the one that changes to the difference in RGBTriangle
+             */
+
             double diffX = diffBetweenX[1] - diffBetweenX[0];
             double diffY = diffBetweenY[1] - diffBetweenY[0];
+            difference = Math.max(diffX, diffY);
 
-            difference = Math.max(diffX, diffY); // what we'll increment by
+            /*
+            Next, throw the parameters into the map creator
+             */
 
-            RGBTriangle.diffTriangle(minX, maxX, minY, maxY, (double) Math.round(difference * 100) / 100); // finally, pass the parameters into drawtool
+            RGBTriangle.diffTriangle(minX, maxX, minY, maxY, (double) Math.round(difference * 100) / 100);
         } catch (Exception e) {
-            System.out.println ("File not found");
+            RGBTriangle.generateMap.close();
+            Alert improperIm = new Alert(Alert.AlertType.ERROR);
+            improperIm.setTitle("Warning");
+            improperIm.setHeaderText("File could not be read: See user guide");
+            improperIm.showAndWait();
         }
     }
 

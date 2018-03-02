@@ -615,6 +615,7 @@ public class DrawTool extends JPanel {
 	// Need this size to balance axes.
         frame.setSize (520, 690);
 	frame.setTitle ("Generated Color Map");
+	frame.setUndecorated(false);
 
 	Container cPane = frame.getContentPane ();
 
@@ -629,9 +630,7 @@ public class DrawTool extends JPanel {
 	panel.setBackground (inputPanelColor);
 	panel.setLayout (new GridLayout (2,1));
 	panel.add (outputLabel);
-	if (! sequencingOn) {
-	    cPane.add (panel, BorderLayout.SOUTH);
-	}
+
 
 	// Drawing in the center.
 	drawArea = new DrawTool ();
@@ -660,6 +659,14 @@ public class DrawTool extends JPanel {
 
 
     }
+    void close () {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+	}
 
 
     static void handleMouseClick (MouseEvent e)
