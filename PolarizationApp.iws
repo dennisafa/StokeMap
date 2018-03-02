@@ -8,19 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="234c4a6f-e516-403c-abdc-b4fb4676b7fc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/PolarizationApp.iws" afterPath="$PROJECT_DIR$/PolarizationApp.iws" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/PolarizationApp_jar/PolarizationApp.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool$1.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool$2.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool$2.class" />
       <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/DrawTool.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/RGBTriangle.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/RGBTriangle.class" />
       <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$1.class" />
       <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$ClickHandler.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$ClickHandler.class" />
       <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/triangle.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/DrawTool.java" afterPath="$PROJECT_DIR$/src/DrawTool.java" />
-      <change beforePath="$PROJECT_DIR$/src/RGBTriangle.java" afterPath="$PROJECT_DIR$/src/RGBTriangle.java" />
       <change beforePath="$PROJECT_DIR$/src/mainFrame.java" afterPath="$PROJECT_DIR$/src/mainFrame.java" />
-      <change beforePath="$PROJECT_DIR$/src/triangle.png" afterPath="$PROJECT_DIR$/triangle.png" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +43,8 @@
       <file leaf-file-name="mainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="168" column="38" lean-forward="true" selection-start-line="168" selection-start-column="38" selection-end-line="168" selection-end-column="38" />
+            <state relative-caret-position="521">
+              <caret line="171" column="44" lean-forward="false" selection-start-line="171" selection-start-column="44" selection-end-line="171" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,7 +55,7 @@
       <file leaf-file-name="RGBTriangle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RGBTriangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
+            <state relative-caret-position="299">
               <caret line="80" column="30" lean-forward="true" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
               <folding />
             </state>
@@ -72,10 +65,11 @@
       <file leaf-file-name="DrawTool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DrawTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="617" column="30" lean-forward="false" selection-start-line="617" selection-start-column="30" selection-end-line="617" selection-end-column="30" />
+            <state relative-caret-position="190">
+              <caret line="661" column="19" lean-forward="false" selection-start-line="661" selection-start-column="19" selection-end-line="661" selection-end-column="19" />
               <folding>
-                <marker date="1519952137000" expanded="true" signature="30255:32782" ph="{...}" />
+                <element signature="e#17494#17495#0" expanded="true" />
+                <marker date="1519964870000" expanded="true" signature="30159:32686" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -117,8 +111,8 @@
         <option value="$PROJECT_DIR$/Source Code/DrawTool.java" />
         <option value="$PROJECT_DIR$/src/FileUtils.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-        <option value="$PROJECT_DIR$/src/DrawTool.java" />
         <option value="$PROJECT_DIR$/src/RGBTriangle.java" />
+        <option value="$PROJECT_DIR$/src/DrawTool.java" />
         <option value="$PROJECT_DIR$/src/mainFrame.java" />
       </list>
     </option>
@@ -207,7 +201,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="repaint&#9;PSI&#9;JAVA://sun.awt.RepaintArea&#10;display&#9;PSI&#9;JAVA://DrawTool#display&#10;buildGui&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buildGUI&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buildG&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buil&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;JTextFiel&#9;PSI&#9;JAVA://javax.swing.JTextField&#10;pointDia&#9;PSI&#9;JAVA://DrawTool#pointDiameter" />
+    <property name="SearchEverywhereHistoryKey" value="close&#9;PSI&#9;JAVA://DrawTool#close&#10;repaint&#9;PSI&#9;JAVA://sun.awt.RepaintArea&#10;display&#9;PSI&#9;JAVA://DrawTool#display&#10;buildGui&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buildGUI&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buildG&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;buil&#9;PSI&#9;JAVA://DrawTool#buildGUI&#10;JTextFiel&#9;PSI&#9;JAVA://javax.swing.JTextField&#10;pointDia&#9;PSI&#9;JAVA://DrawTool#pointDiameter" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
   </component>
@@ -395,12 +389,12 @@
       <workItem from="1519833814571" duration="5533000" />
       <workItem from="1519870770721" duration="1222000" />
       <workItem from="1519883145551" duration="16347000" />
-      <workItem from="1519943776721" duration="8620000" />
+      <workItem from="1519943776721" duration="8945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116985000" />
+    <option name="totallyTimeSpent" value="117310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -457,21 +451,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/RGBTriangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="46" column="40" lean-forward="false" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stokeParam.txt" />
     <entry file="file://$PROJECT_DIR$/src/DrawTool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="72" column="32" lean-forward="false" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
           <folding>
-            <marker date="1519952137000" expanded="true" signature="30255:32782" ph="{...}" />
+            <element signature="e#17494#17495#0" expanded="true" />
+            <marker date="1519964870000" expanded="true" signature="30159:32686" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -535,7 +522,8 @@
         <state relative-caret-position="2130">
           <caret line="161" column="5" lean-forward="false" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
           <folding>
-            <marker date="1519952137000" expanded="true" signature="30255:32782" ph="{...}" />
+            <element signature="e#17494#17495#0" expanded="true" />
+            <marker date="1519964870000" expanded="true" signature="30159:32686" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -563,7 +551,8 @@
         <state relative-caret-position="2415">
           <caret line="161" column="5" lean-forward="false" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
           <folding>
-            <marker date="1519952137000" expanded="true" signature="30255:32782" ph="{...}" />
+            <element signature="e#17494#17495#0" expanded="true" />
+            <marker date="1519964870000" expanded="true" signature="30159:32686" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -591,7 +580,8 @@
         <state relative-caret-position="2415">
           <caret line="161" column="5" lean-forward="false" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
           <folding>
-            <marker date="1519952137000" expanded="true" signature="30255:32782" ph="{...}" />
+            <element signature="e#17494#17495#0" expanded="true" />
+            <marker date="1519964870000" expanded="true" signature="30159:32686" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -619,7 +609,8 @@
         <state relative-caret-position="2130">
           <caret line="161" column="5" lean-forward="true" selection-start-line="161" selection-start-column="5" selection-end-line="161" selection-end-column="5" />
           <folding>
-            <marker date="1519952137000" expanded="true" signature="30255:32782" ph="{...}" />
+            <element signature="e#17494#17495#0" expanded="true" />
+            <marker date="1519964870000" expanded="true" signature="30159:32686" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -647,7 +638,8 @@
         <state relative-caret-position="2220">
           <caret line="167" column="35" lean-forward="false" selection-start-line="167" selection-start-column="35" selection-end-line="167" selection-end-column="35" />
           <folding>
-            <marker date="1519952137000" expanded="true" signature="30255:32782" ph="{...}" />
+            <element signature="e#17494#17495#0" expanded="true" />
+            <marker date="1519964870000" expanded="true" signature="30159:32686" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -765,19 +757,28 @@
         <state />
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/io/Closeable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DrawTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="617" column="30" lean-forward="false" selection-start-line="617" selection-start-column="30" selection-end-line="617" selection-end-column="30" />
+        <state relative-caret-position="190">
+          <caret line="661" column="19" lean-forward="false" selection-start-line="661" selection-start-column="19" selection-end-line="661" selection-end-column="19" />
           <folding>
-            <marker date="1519952137000" expanded="true" signature="30255:32782" ph="{...}" />
+            <element signature="e#17494#17495#0" expanded="true" />
+            <marker date="1519964870000" expanded="true" signature="30159:32686" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RGBTriangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
+        <state relative-caret-position="299">
           <caret line="80" column="30" lean-forward="true" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
           <folding />
         </state>
@@ -785,8 +786,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="168" column="38" lean-forward="true" selection-start-line="168" selection-start-column="38" selection-end-line="168" selection-end-column="38" />
+        <state relative-caret-position="521">
+          <caret line="171" column="44" lean-forward="false" selection-start-line="171" selection-start-column="44" selection-end-line="171" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -169,6 +169,7 @@ public class mainFrame extends Application {
             } catch (IOException e) {}
 
             caution.setText("Enter X and Y in values of : " + (double) Math.round(difference * 100) / 100);
+            RGBTriangle.generateMap.close();
         });
 
         btnCalc.setOnMouseClicked(event -> calculateValues());
