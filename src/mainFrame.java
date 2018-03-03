@@ -15,20 +15,16 @@ import org.apache.commons.io.FileUtils;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.Stack;
-
-import static com.sun.org.apache.xerces.internal.utils.SecuritySupport.getResourceAsStream;
-
 
 public class mainFrame extends Application {
 
-    Button btnCalc = new Button();
+    public static Button btnCalc = new Button();
     Button btnExit = new Button();
     Button openStoke = new Button();
-    Button saveImage = new Button();
+    public static Button saveImage = new Button();
     Hyperlink help = new Hyperlink();
-    TextField textFieldY = new TextField();
-    TextField textFieldX = new TextField();
+    public static TextField textFieldY = new TextField();
+    public static TextField textFieldX = new TextField();
     TextField textFieldsS1 = new TextField();
     TextField textFieldsS2 = new TextField();
     TextField textFieldsS3 = new TextField();
@@ -71,7 +67,7 @@ public class mainFrame extends Application {
     {
         // root pane, with grid pane insertions
         GridPane pane = new GridPane();
-        ClickHandler ch = new ClickHandler();
+    //    ClickHandler ch = new ClickHandler();
         GridPane setText;
         GridPane setClose;
         Scene scene;
@@ -88,7 +84,7 @@ public class mainFrame extends Application {
         btnCalc.setText("Calculate Stokes Parameters");
         btnCalc.setMinWidth(200);
         btnCalc.setDisable(true);
-        openStoke.setOnAction(ch);
+    //    openStoke.setOnAction(ch);
         openStoke.setPrefWidth(230);
 
         lblX.setText("X Axis:");
@@ -227,7 +223,7 @@ public class mainFrame extends Application {
         primaryStage.show();
 
     }
-
+   /*
     private class ClickHandler implements EventHandler<ActionEvent> {
         @Override
         public void handle (ActionEvent e){ // Once a file is uploaded, we may make the x and y selectable
@@ -239,6 +235,7 @@ public class mainFrame extends Application {
             }
         }
     }
+    */
 
     private void calculateValues ()
     {

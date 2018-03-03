@@ -40,11 +40,6 @@ public class RGBTriangle {
 
     public static void diffTriangle (double xStart, double xEnd, double yStart, double yEnd, double diff)
     {
-        /*
-        r1 = 0;
-        g1 = 0;
-        b1 = 0;
-        */
         xyRGB = new HashMap<>();
         getRColor = new HashMap<>();
         getBColor = new HashMap<>();
@@ -78,7 +73,9 @@ public class RGBTriangle {
                     generateMap.drawPointTriangle(x, y);
                 }
             }
-        generateMap.display();
+            generateMap.display();
+
+
         try {
             mainFrame.fileVer++;
             img = new BufferedImage(DrawTool.frame.getWidth(), DrawTool.frame.getHeight(), BufferedImage.TYPE_INT_RGB);
@@ -88,6 +85,13 @@ public class RGBTriangle {
         } catch (IOException e) {
             System.out.println ("Created the image did not work");
         }
+        /*
+        Once the map is generated, we may set these functions to work in the mainFrame.
+         */
+        mainFrame.textFieldY.setEditable(true);
+        mainFrame.textFieldX.setEditable(true);
+        mainFrame.btnCalc.setDisable(false);
+        mainFrame.saveImage.setDisable(false);
         }
 
     }
