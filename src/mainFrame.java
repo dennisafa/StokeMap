@@ -212,7 +212,7 @@ public class mainFrame extends Application {
 
 
         // Setting the scene and the stage
-        scene = new Scene(root, 750, 550);
+        scene = new Scene(root, 750, 650);
         primaryStage.setTitle("StokesMap");
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
@@ -345,6 +345,15 @@ public class mainFrame extends Application {
     private void calcWithStokes(File checkStoke)
     {
         try {
+            /*
+            long checkIfTxt = checkStoke.length();
+            if (checkStoke.getName().charAt((int) checkIfTxt) != 't') {
+                Alert improperIm = new Alert(Alert.AlertType.ERROR);
+                improperIm.setTitle("Warning");
+                improperIm.setHeaderText("File could not be read: See user guide");
+                improperIm.showAndWait();
+            }
+            */
             Scanner readStoke = new Scanner(checkStoke); // reading the formatted file
             int counter;
             double maxX = Double.NEGATIVE_INFINITY; // Compare for the max values to pass into the image creator

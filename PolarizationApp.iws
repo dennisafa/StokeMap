@@ -8,10 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="234c4a6f-e516-403c-abdc-b4fb4676b7fc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/PolarizationApp.iws" afterPath="$PROJECT_DIR$/PolarizationApp.iws" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame$ClickHandler.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class" afterPath="$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class" />
-      <change beforePath="$PROJECT_DIR$/src/RGBTriangle.java" afterPath="$PROJECT_DIR$/src/RGBTriangle.java" />
       <change beforePath="$PROJECT_DIR$/src/mainFrame.java" afterPath="$PROJECT_DIR$/src/mainFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,31 +36,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../Applet/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5246">
-              <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            <state relative-caret-position="331">
+              <caret line="218" column="7" lean-forward="false" selection-start-line="218" selection-start-column="7" selection-end-line="218" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RGBTriangle.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RGBTriangle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RGBTriangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="88" column="87" lean-forward="false" selection-start-line="88" selection-start-column="87" selection-end-line="88" selection-end-column="87" />
+            <state relative-caret-position="644">
+              <caret line="73" column="4" lean-forward="true" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -72,7 +59,7 @@
       <file leaf-file-name="DrawTool.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DrawTool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8895">
+            <state relative-caret-position="15">
               <caret line="661" column="19" lean-forward="false" selection-start-line="661" selection-start-column="19" selection-end-line="661" selection-end-column="19" />
               <folding>
                 <element signature="e#17494#17495#0" expanded="true" />
@@ -123,8 +110,8 @@
         <option value="$PROJECT_DIR$/out/index.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/../../Applet/index.html" />
-        <option value="$PROJECT_DIR$/src/mainFrame.java" />
         <option value="$PROJECT_DIR$/src/RGBTriangle.java" />
+        <option value="$PROJECT_DIR$/src/mainFrame.java" />
       </list>
     </option>
   </component>
@@ -412,12 +399,12 @@
       <workItem from="1519943776721" duration="9436000" />
       <workItem from="1519973365693" duration="3615000" />
       <workItem from="1520040141413" duration="231000" />
-      <workItem from="1520102835941" duration="672000" />
+      <workItem from="1520102835941" duration="1789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122319000" />
+    <option name="totallyTimeSpent" value="123436000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -441,7 +428,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.20527618" sideWeight="0.5014245" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09228442" sideWeight="0.4985755" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.045385778" sideWeight="0.4985755" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -714,17 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DrawTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8895">
-          <caret line="661" column="19" lean-forward="false" selection-start-line="661" selection-start-column="19" selection-end-line="661" selection-end-column="19" />
-          <folding>
-            <element signature="e#17494#17495#0" expanded="true" />
-            <marker date="1519964870000" expanded="true" signature="30159:32686" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/index.html" />
     <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/out/production/PolarizationApp/mainFrame.class">
@@ -752,18 +728,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/RGBTriangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5246">
-          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        <state relative-caret-position="644">
+          <caret line="73" column="4" lean-forward="true" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RGBTriangle.java">
+    <entry file="file://$PROJECT_DIR$/src/DrawTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="88" column="87" lean-forward="false" selection-start-line="88" selection-start-column="87" selection-end-line="88" selection-end-column="87" />
+        <state relative-caret-position="15">
+          <caret line="661" column="19" lean-forward="false" selection-start-line="661" selection-start-column="19" selection-end-line="661" selection-end-column="19" />
+          <folding>
+            <element signature="e#17494#17495#0" expanded="true" />
+            <marker date="1519964870000" expanded="true" signature="30159:32686" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="218" column="7" lean-forward="false" selection-start-line="218" selection-start-column="7" selection-end-line="218" selection-end-column="7" />
           <folding />
         </state>
       </provider>
