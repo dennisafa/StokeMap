@@ -48,7 +48,9 @@ public class mainFrame extends Application {
     public static HashMap<String, Double> stokesHash1 = new HashMap<>();
     public static HashMap<String, Double> stokesHash2 = new HashMap<>();
     public static HashMap<String, Double> stokesHash3 = new HashMap<>();
+
     public static double difference = 0;
+
     public File color = new File ("ColorMap.png");
     public static int fileVer = 0;
     public Stage primaryStage;
@@ -223,19 +225,6 @@ public class mainFrame extends Application {
         primaryStage.show();
 
     }
-   /*
-    private class ClickHandler implements EventHandler<ActionEvent> {
-        @Override
-        public void handle (ActionEvent e){ // Once a file is uploaded, we may make the x and y selectable
-            if (e.getSource() == openStoke) {
-                textFieldX.setEditable(true);
-                textFieldY.setEditable(true);
-                btnCalc.setDisable(false);
-                saveImage.setDisable(false);
-            }
-        }
-    }
-    */
 
     private void calculateValues ()
     {
@@ -345,15 +334,6 @@ public class mainFrame extends Application {
     private void calcWithStokes(File checkStoke)
     {
         try {
-            /*
-            long checkIfTxt = checkStoke.length();
-            if (checkStoke.getName().charAt((int) checkIfTxt) != 't') {
-                Alert improperIm = new Alert(Alert.AlertType.ERROR);
-                improperIm.setTitle("Warning");
-                improperIm.setHeaderText("File could not be read: See user guide");
-                improperIm.showAndWait();
-            }
-            */
             Scanner readStoke = new Scanner(checkStoke); // reading the formatted file
             int counter;
             double maxX = Double.NEGATIVE_INFINITY; // Compare for the max values to pass into the image creator

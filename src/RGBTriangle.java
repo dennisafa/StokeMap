@@ -19,24 +19,6 @@ public class RGBTriangle {
     public static int b1;
     public static DrawTool generateMap = new DrawTool();
     public static BufferedImage img;
-/*
-    public static void createRGBTriangle ()
-    {
-        for (double x = 0; x < 1.155; x = x + 0.005) {
-            for (double y = 0; y < 1; y = y + 0.005) {
-                if ((y < Math.sqrt(3) * x) && (y < -Math.sqrt(3) * (x - 1.155))) {
-                    r = (1.732 * x - y) * 250 / 2;
-                    g = (-1.732 * x - y + 2) * 250 / 2;
-                    b = y * 250;
-                    r1 = (int) r;
-                    g1 = (int) g;
-                    b1 = (int) b;
-                }
-            }
-
-        }
-    }
-    */
 
     public static void diffTriangle (double xStart, double xEnd, double yStart, double yEnd, double diff)
     {
@@ -64,7 +46,6 @@ public class RGBTriangle {
                     b1 = (int) b;
                     String stokesValue = String.format("%.3f", r/250) + "," + String.format("%.3f", g/250) + "," + String.format("%.3f", b/250);
                     xyRGB.put(XandY, r/250 + "," + g/250 + "," + b/250);
-                // System.out.println (stokesValue);
                     getStokesRGB.put(stokesValue, r1 + "," + g1 + "," + b1);
                     getStokes.put(stokesValue, XandY);
                     getRColor.put(XandY, r1);
@@ -77,11 +58,11 @@ public class RGBTriangle {
 
 
         try {
-            mainFrame.fileVer++;
-            img = new BufferedImage(DrawTool.frame.getWidth(), DrawTool.frame.getHeight(), BufferedImage.TYPE_INT_RGB);
+            mainFrame.fileVer++; // increment the file version
+            img = new BufferedImage(DrawTool.frame.getWidth(), DrawTool.frame.getHeight(), BufferedImage.TYPE_INT_RGB); // get a screenshot of the frame
             DrawTool.frame.paint(RGBTriangle.img.getGraphics());
             File outputfile = new File("ColorMap" + mainFrame.fileVer + ".png");
-            ImageIO.write(RGBTriangle.img, "png", outputfile);
+            ImageIO.write(RGBTriangle.img, "png", outputfile); // write the file to the output
         } catch (IOException e) {
             System.out.println ("Created the image did not work");
         }
